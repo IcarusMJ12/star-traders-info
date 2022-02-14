@@ -166,7 +166,7 @@ select componentsize as s, componentname as name, skpilot as pil, skshipops as o
 | 1 | Scout-Skirmish Bridge 5    | 8   | 4   | 6   | 6   | 4   | 4   | 4   | 100  | 8       |
 | 1 | Scout-Hauler Bridge 5      | 8   | 4   | 5   | 8   | -5  | 2   | 2   | -100 | 9       |
 | 1 | Scout-Vanguard Bridge 5    | 6   | 5   | 8   | 6   | 2   | 2   | 2   | 100  | 6       |
-|
+||
 | 2 | Bridge                     | 5   | 3   | 4   | 5   | 0   | 0   | 0   | 300  | 0       |
 | 2 | Bridge 2                   | 6   | 3   | 5   | 5   | 0   | 0   | 0   | 300  | 0       |
 | 2 | Bridge 3                   | 6   | 4   | 5   | 6   | 0   | 1   | 0   | 300  | 0       |
@@ -174,7 +174,7 @@ select componentsize as s, componentname as name, skpilot as pil, skshipops as o
 | 2 | Battle Bridge              | 6   | 3   | 4   | 6   | 4   | 2   | 0   | 250  | 8       |
 | 2 | Battle Bridge 2            | 8   | 4   | 5   | 8   | 3   | 2   | 0   | 250  | 8       |
 | 2 | Battle Bridge 3            | 9   | 4   | 6   | 8   | 4   | 2   | 0   | 250  | 8       |
-|
+||
 | 3 | Capital Bridge             | 9   | 5   | 8   | 8   | 0   | 0   | 0   | 600  | 0       |
 | 3 | Capital Bridge 2           | 9   | 5   | 9   | 9   | 0   | 0   | 0   | 600  | 0       |
 | 3 | Capital Bridge 3           | 9   | 6   | 10  | 9   | 0   | 1   | 0   | 600  | 0       |
@@ -204,7 +204,7 @@ where componenttype = 3 and factionid < 10 order by name;
 | M2400 Void Engine: Longhaul   | 6   | 6   | 7   | 2   | 3   | 1   | 200  | 0       | 8  | 3      | 27  | 27  | 1  | 0    | 15   |
 | M2400 Void Engine: Traveler   | 6   | 6   | 6   | 2   | 3   | 1   | 200  | 0       | 8  | 3      | 30  | 27  | 2  | 0    | 6    |
 | M2400 Void Engine: Warhammer  | 6   | 6   | 6   | 2   | 3   | 2   | 200  | 0       | 9  | 3      | 27  | 28  | 3  | 0    | 7    |
-|
+||
 | M3400 Void Engine: Balanced   | 8   | 8   | 7   | 2   | 2   | 0   | 400  | 0       | 8  | 3      | 24  | 24  | 2  | 0    | 12   |
 | M3400 Void Engine: Behemoth   | 8   | 9   | 7   | 2   | 8   | 3   | 450  | 5       | 9  | 3      | 27  | 24  | 3  | 0    | 7    |
 | M3400 Void Engine: Chaser     | 9   | 7   | 7   | 2   | 2   | 0   | 400  | 0       | 8  | 2      | 24  | 29  | 2  | 0    | 8    |
@@ -212,7 +212,7 @@ where componenttype = 3 and factionid < 10 order by name;
 | M3400 Void Engine: Longhaul   | 7   | 9   | 7   | 2   | 2   | 0   | 400  | 0       | 8  | 3      | 23  | 23  | 1  | 0    | 15   |
 | M3400 Void Engine: Traveler   | 7   | 7   | 9   | 2   | 2   | 0   | 400  | 0       | 8  | 3      | 29  | 24  | 2  | 0    | 8    |
 | M3400 Void Engine: Warhammer  | 7   | 9   | 7   | 2   | 2   | 2   | 450  | 0       | 9  | 3      | 24  | 26  | 3  | 0    | 7    |
-|
+||
 | M5000 Void Engine: Balanced   | 9   | 9   | 6   | 0   | 0   | 0   | 700  | 0       | 8  | 4      | 19  | 19  | 2  | 0    | 10   |
 | M5000 Void Engine: Behemoth   | 9   | 9   | 7   | 3   | 9   | 4   | 750  | 4       | 9  | 4      | 21  | 19  | 4  | 5    | 6    |
 | M5000 Void Engine: Chaser     | 10  | 8   | 6   | 0   | 0   | 0   | 700  | 0       | 8  | 3      | 18  | 22  | 2  | 0    | 8    |
@@ -220,7 +220,7 @@ where componenttype = 3 and factionid < 10 order by name;
 | M5000 Void Engine: Longhaul   | 9   | 9   | 6   | 0   | 0   | 0   | 700  | 0       | 8  | 4      | 20  | 18  | 1  | 0    | 11   |
 | M5000 Void Engine: Traveler   | 8   | 10  | 6   | 0   | 0   | 0   | 700  | 0       | 8  | 4      | 23  | 16  | 3  | 0    | 8    |
 | M5000 Void Engine: Warhammer  | 9   | 9   | 7   | 1   | 1   | 2   | 750  | 0       | 9  | 4      | 19  | 20  | 4  | 4    | 6    |
-|
+||
 | M6000 Void Engine: Balanced   | 11  | 9   | 8   | 0   | 0   | 0   | 1100 | 0       | 8  | 4      | 15  | 15  | 3  | 5    | 10   |
 | M6000 Void Engine: Behemoth   | 11  | 9   | 8   | 3   | 10  | 5   | 1100 | 3       | 9  | 4      | 17  | 14  | 4  | 8    | 6    |
 | M6000 Void Engine: Chaser     | 11  | 9   | 8   | 0   | 0   | 0   | 1100 | 0       | 8  | 3      | 13  | 18  | 2  | 4    | 7    |
@@ -228,7 +228,7 @@ where componenttype = 3 and factionid < 10 order by name;
 | M6000 Void Engine: Longhaul   | 10  | 11  | 7   | 0   | 0   | 0   | 1100 | 0       | 8  | 4      | 15  | 15  | 2  | 3    | 11   |
 | M6000 Void Engine: Traveler   | 11  | 9   | 8   | 0   | 0   | 0   | 1100 | 0       | 8  | 4      | 19  | 13  | 3  | 4    | 8    |
 | M6000 Void Engine: Warhammer  | 11  | 9   | 8   | 1   | 1   | 2   | 1100 | 0       | 9  | 4      | 15  | 16  | 4  | 6    | 6    |
-|
+||
 | M7000 Void Engine: Balanced   | 11  | 9   | 8   | 0   | 0   | 0   | 1300 | 0       | 8  | 4      | 12  | 12  | 4  | 6    | 9    |
 | M7000 Void Engine: Behemoth   | 12  | 10  | 10  | 3   | 11  | 6   | 1300 | 2       | 10 | 4      | 14  | 11  | 5  | 10   | 6    |
 | M7000 Void Engine: Chaser     | 10  | 9   | 10  | 0   | 0   | 0   | 1300 | 0       | 8  | 3      | 10  | 14  | 3  | 5    | 7    |
@@ -236,7 +236,7 @@ where componenttype = 3 and factionid < 10 order by name;
 | M7000 Void Engine: Longhaul   | 12  | 10  | 9   | 0   | 0   | 0   | 1300 | 0       | 8  | 4      | 12  | 11  | 3  | 4    | 10   |
 | M7000 Void Engine: Traveler   | 12  | 11  | 9   | 0   | 0   | 0   | 1300 | 0       | 8  | 4      | 15  | 9   | 4  | 8    | 8    |
 | M7000 Void Engine: Warhammer  | 12  | 10  | 10  | 1   | 1   | 2   | 1300 | 0       | 10 | 4      | 12  | 13  | 5  | 8    | 6    |
-|
+||
 | M8000 Void Engine: Balanced   | 14  | 12  | 11  | 0   | 0   | 0   | 1500 | 0       | 8  | 4      | 9   | 9   | 4  | 5    | 9    |
 | M8000 Void Engine: Behemoth   | 14  | 12  | 12  | 4   | 12  | 7   | 1500 | 8       | 11 | 4      | 12  | 9   | 5  | 12   | 5    |
 | M8000 Void Engine: Chaser     | 16  | 12  | 11  | 0   | 0   | 0   | 1500 | 0       | 8  | 3      | 10  | 12  | 4  | 2    | 6    |
@@ -244,7 +244,7 @@ where componenttype = 3 and factionid < 10 order by name;
 | M8000 Void Engine: Longhaul   | 15  | 14  | 12  | 0   | 0   | 0   | 1500 | 0       | 8  | 4      | 10  | 6   | 3  | 4    | 9    |
 | M8000 Void Engine: Traveler   | 14  | 13  | 9   | 0   | 0   | 0   | 1500 | 0       | 8  | 4      | 15  | 8   | 5  | 8    | 7    |
 | M8000 Void Engine: Warhammer  | 14  | 12  | 12  | 2   | 1   | 2   | 1500 | 0       | 10 | 4      | 9   | 11  | 5  | 10   | 5    |
-|
+||
 | M9000 Void Engine: Balanced   | 13  | 13  | 10  | 0   | 0   | 0   | 1750 | 0       | 8  | 4      | 9   | 9   | 4  | 5    | 8    |
 | M9000 Void Engine: Behemoth   | 16  | 12  | 12  | 4   | 13  | 8   | 1750 | 7       | 11 | 4      | 11  | 9   | 5  | 14   | 4    |
 | M9000 Void Engine: Chaser     | 15  | 14  | 10  | 0   | 0   | 0   | 1750 | 0       | 8  | 3      | 10  | 10  | 4  | 5    | 6    |
@@ -271,42 +271,42 @@ from shipcomponent where componenttype = 9 and factionid < 10 order by drivemass
 | 2400      | Longhaul Hyperwarp Drive    | 0   | 3   | 8   | 10  | 0   | 1   | 200  | 0       |
 | 2400      | Performance Hyperwarp Drive | 0   | 5   | 7   | 24  | 0   | 0   | 190  | 6       |
 | 2400      | Warhammer Hyperwarp Drive   | 6   | 5   | 7   | 24  | 4   | 6   | 190  | 7       |
-|
+||
 | 3400      | Basic Hyperwarp Drive       | 0   | 3   | 10  | 18  | 0   | 2   | 225  | 0       |
 | 3400      | Combat Hyperwarp Drive      | 2   | 3   | 10  | 20  | 1   | 3   | 215  | 0       |
 | 3400      | Kickstarter Hyperwarp Drive | 0   | 4   | 11  | 16  | 1   | 1   | 225  | 0       |
 | 3400      | Longhaul Hyperwarp Drive    | 0   | 3   | 12  | 14  | 0   | 1   | 225  | 0       |
 | 3400      | Performance Hyperwarp Drive | 0   | 5   | 8   | 26  | 0   | 0   | 215  | 5       |
 | 3400      | Warhammer Hyperwarp Drive   | 6   | 5   | 8   | 26  | 4   | 6   | 215  | 8       |
-|
+||
 | 5000      | Basic Hyperwarp Drive       | 0   | 3   | 12  | 22  | 0   | 0   | 225  | 0       |
 | 5000      | Combat Hyperwarp Drive      | 3   | 2   | 12  | 25  | 2   | 3   | 215  | 0       |
 | 5000      | Kickstarter Hyperwarp Drive | 0   | 4   | 13  | 20  | 1   | 0   | 225  | 0       |
 | 5000      | Longhaul Hyperwarp Drive    | 0   | 4   | 14  | 18  | 0   | 0   | 225  | 0       |
 | 5000      | Performance Hyperwarp Drive | 0   | 6   | 8   | 31  | 0   | 0   | 215  | 0       |
 | 5000      | Warhammer Hyperwarp Drive   | 7   | 6   | 8   | 31  | 6   | 5   | 215  | 0       |
-|
+||
 | 6000      | Basic Hyperwarp Drive       | 0   | 6   | 14  | 26  | 0   | 0   | 300  | 0       |
 | 6000      | Combat Hyperwarp Drive      | 3   | 5   | 14  | 29  | 2   | 2   | 290  | 0       |
 | 6000      | Kickstarter Hyperwarp Drive | 0   | 5   | 15  | 24  | 0   | 0   | 300  | 0       |
 | 6000      | Longhaul Hyperwarp Drive    | 0   | 4   | 17  | 22  | 0   | 0   | 300  | 0       |
 | 6000      | Performance Hyperwarp Drive | 0   | 7   | 10  | 35  | 0   | 0   | 290  | 0       |
 | 6000      | Warhammer Hyperwarp Drive   | 7   | 7   | 10  | 35  | 6   | 5   | 290  | 0       |
-|
+||
 | 7000      | Basic Hyperwarp Drive       | 0   | 5   | 15  | 28  | 0   | 0   | 500  | 0       |
 | 7000      | Combat Hyperwarp Drive      | 4   | 4   | 15  | 32  | 3   | 2   | 480  | 0       |
 | 7000      | Kickstarter Hyperwarp Drive | 0   | 6   | 16  | 26  | 1   | 1   | 500  | 0       |
 | 7000      | Longhaul Hyperwarp Drive    | 0   | 7   | 18  | 25  | 0   | 0   | 500  | 0       |
 | 7000      | Performance Hyperwarp Drive | 0   | 7   | 11  | 38  | 0   | 0   | 480  | 0       |
 | 7000      | Warhammer Hyperwarp Drive   | 8   | 7   | 11  | 38  | 7   | 4   | 480  | 0       |
-|
+||
 | 8000      | Basic Hyperwarp Drive       | 0   | 8   | 18  | 32  | 0   | 0   | 550  | 0       |
 | 8000      | Combat Hyperwarp Drive      | 4   | 7   | 17  | 36  | 3   | 1   | 525  | 0       |
 | 8000      | Kickstarter Hyperwarp Drive | 0   | 10  | 17  | 30  | 0   | 0   | 550  | 0       |
 | 8000      | Longhaul Hyperwarp Drive    | 0   | 7   | 20  | 28  | 0   | 0   | 550  | 0       |
 | 8000      | Performance Hyperwarp Drive | 0   | 8   | 13  | 42  | 0   | 0   | 525  | 9       |
 | 8000      | Warhammer Hyperwarp Drive   | 8   | 8   | 13  | 42  | 7   | 4   | 525  | 2       |
-|
+||
 | 9000      | Basic Hyperwarp Drive       | 0   | 10  | 19  | 36  | 0   | 0   | 750  | 0       |
 | 9000      | Combat Hyperwarp Drive      | 4   | 8   | 19  | 40  | 3   | 1   | 725  | 0       |
 | 9000      | Longhaul Hyperwarp Drive    | 0   | 8   | 21  | 30  | 0   | 0   | 750  | 0       |
@@ -327,11 +327,11 @@ from shipcomponent where componenttype = 2 and factionid < 10 order by s, cargo,
 |---|----------------------|-----|-----|-------|------|-----|-----|-----|------|---------|
 | 1 | Cargo-Fuel Pod       | 0   | 1   | 5     | 10   | 0   | 0   | 0   | 120  | 0       |
 | 1 | Storage Cache        | 0   | 1   | 10    | 0    | 0   | 0   | 0   | 125  | 0       |
-|
+||
 | 2 | Armored Storage      | 0   | 3   | 10    | 0    | 1   | 1   | 1   | 325  | 0       |
 | 2 | Cargo-Fuel Storage   | 0   | 3   | 15    | 15   | 0   | 0   | 0   | 325  | 0       |
 | 2 | Storage Hold         | 0   | 3   | 25    | 0    | 0   | 0   | 0   | 325  | 0       |
-|
+||
 | 3 | Cargo Hold 1         | 0   | 2   | 25    | 40   | 0   | 0   | 0   | 625  | 0       |
 | 3 | Cargo Hold 2         | 0   | 2   | 35    | 50   | 0   | 0   | 0   | 625  | 0       |
 | 3 | Fuel-Cargo Hold 4    | 0   | 4   | 35    | 95   | 0   | 0   | 0   | 625  | 1       |
@@ -589,7 +589,7 @@ select basemass as mass, unlockid > 0 as lock, shiptypename as name, hullpoints 
 | 2400 | 1    | Aeternum Vindex           | 1000 | 14  | 10   | 70   | 5   | 24   | 10 | 4  | 2 | 1     | 0 |
 | 2400 | 0    | Zartar Fang               | 1250 | 8   | 8    | 50   | 5   | 24   | 9  | 6  | 2 | 1     | 6 |
 | 2400 | 0    | Gunhawk Sabre             | 1100 | 12  | 12   | 60   | 6   | 18   | 10 | 7  | 1 | 1     | 3 |
-|
+||
 | 3400 | 0    | Juror Class               | 1100 | 10  | 10   | 55   | 4   | 24   | 9  | 4  | 2 | 0     | 0 |
 | 3400 | 0    | Lightbow Raptor           | 1200 | 12  | 10   | 25   | 4   | 24   | 9  | 5  | 2 | 0     | 0 |
 | 3400 | 0    | Strikecruiser             | 1250 | 12  | 10   | 75   | 4   | 24   | 10 | 4  | 3 | 0     | 0 |
@@ -605,7 +605,7 @@ select basemass as mass, unlockid > 0 as lock, shiptypename as name, hullpoints 
 | 3400 | 0    | Sword Cutter              | 1900 | 7   | 8    | 70   | 5   | 30   | 11 | 6  | 2 | 1     | 2 |
 | 3400 | 0    | Wolf Vector               | 1700 | 10  | 6    | 100  | 5   | 30   | 11 | 6  | 2 | 1     | 0 |
 | 3400 | 0    | Rim Exocruiser            | 1100 | 12  | 10   | 105  | 5   | 30   | 11 | 5  | 2 | 1     | 5 |
-|
+||
 | 5000 | 0    | Paladin Cruiser           | 1500 | 8   | 7    | 40   | 5   | 30   | 10 | 5  | 4 | 0     | 0 |
 | 5000 | 0    | Frontier Liner            | 1400 | 7   | 8    | 55   | 5   | 30   | 10 | 5  | 3 | 0     | 0 |
 | 5000 | 1    | Galtak Freighter          | 1600 | 8   | 5    | 30   | 5   | 30   | 12 | 3  | 4 | 0     | 0 |
@@ -622,7 +622,7 @@ select basemass as mass, unlockid > 0 as lock, shiptypename as name, hullpoints 
 | 5000 | 0    | Reach Cruiser             | 1650 | 12  | 8    | 75   | 5   | 30   | 11 | 6  | 4 | 0     | 8 |
 | 5000 | 0    | Reach Defender            | 1750 | 11  | 10   | 45   | 5   | 30   | 10 | 7  | 4 | 0     | 2 |
 | 5000 | 0    | Arcanum Freighter         | 1600 | 9   | 8    | 50   | 5   | 30   | 12 | 5  | 4 | 0     | 9 |
-|
+||
 | 6000 | 0    | Fidelis Cutter            | 2000 | 7   | 8    | 60   | 5   | 30   | 12 | 7  | 4 | 0     | 0 |
 | 6000 | 0    | Guardian Interceptor      | 1950 | 6   | 6    | 60   | 5   | 30   | 12 | 7  | 4 | 0     | 0 |
 | 6000 | 0    | Stellar Falcon            | 2050 | 5   | 9    | 75   | 5   | 30   | 13 | 6  | 4 | 0     | 0 |
@@ -637,7 +637,7 @@ select basemass as mass, unlockid > 0 as lock, shiptypename as name, hullpoints 
 | 6000 | 0    | Fallen Carrier            | 1850 | 4   | 7    | 130  | 7   | 36   | 8  | 9  | 5 | 0     | 0 |
 | 6000 | 0    | Extremis Carrier          | 2005 | 5   | 8    | 80   | 7   | 36   | 7  | 10 | 5 | 0     | 0 |
 | 6000 | 0    | Vark Carrier              | 2500 | 9   | 10   | 90   | 7   | 36   | 8  | 10 | 5 | 0     | 9 |
-|
+||
 | 7000 | 0    | Cautela Heavylift         | 2500 | 5   | 4    | 80   | 6   | 36   | 12 | 8  | 4 | 0     | 0 |
 | 7000 | 0    | Dragoon Cruiser           | 2350 | 6   | 5    | 100  | 6   | 36   | 12 | 8  | 4 | 0     | 0 |
 | 7000 | 0    | Tiberian Highliner        | 2200 | 6   | 5    | 120  | 6   | 42   | 13 | 7  | 6 | 0     | 5 |
@@ -647,7 +647,7 @@ select basemass as mass, unlockid > 0 as lock, shiptypename as name, hullpoints 
 | 7000 | 0    | Leo Battlecruiser         | 2000 | 8   | 7    | 95   | 7   | 42   | 12 | 9  | 6 | 0     | 4 |
 | 7000 | 1    | Obsidian Carrier          | 2650 | 2   | 10   | 80   | 7   | 42   | 11 | 8  | 6 | 0     | 0 |
 | 7000 | 1    | Larimar Battlecruiser     | 2250 | 4   | 11   | 100  | 7   | 42   | 10 | 10 | 5 | 0     | 2 |
-|
+||
 | 8000 | 0    | Aegis Freighter           | 2200 | 9   | 7    | 50   | 7   | 36   | 8  | 13 | 7 | 0     | 7 |
 | 8000 | 1    | Pallas Freighter          | 2050 | 7   | 11   | 95   | 7   | 36   | 9  | 11 | 8 | 0     | 0 |
 | 8000 | 0    | Tempus Freighter          | 2900 | 6   | 10   | 150  | 7   | 36   | 9  | 11 | 8 | 0     | 1 |
@@ -656,7 +656,7 @@ select basemass as mass, unlockid > 0 as lock, shiptypename as name, hullpoints 
 | 8000 | 0    | Mortifor Carrier          | 2350 | 10  | 6    | 60   | 7   | 42   | 15 | 8  | 6 | 0     | 5 |
 | 8000 | 0    | Harbinger Carrier         | 2100 | 7   | 11   | 95   | 7   | 42   | 12 | 10 | 6 | 0     | 8 |
 | 8000 | 1    | Skylift Carrier           | 1850 | 8   | 10   | 135  | 7   | 42   | 14 | 8  | 6 | 0     | 4 |
-|
+||
 | 9000 | 0    | Sword Battlecruiser       | 2100 | 9   | 7    | 115  | 7   | 42   | 14 | 12 | 6 | 0     | 0 |
 | 9000 | 0    | Cautela Titan             | 2700 | 7   | 4    | 160  | 7   | 42   | 12 | 13 | 6 | 0     | 0 |
 | 9000 | 0    | Dreadnought Battlecarrier | 2500 | 8   | 8    | 135  | 7   | 42   | 12 | 12 | 8 | 0     | 1 |
