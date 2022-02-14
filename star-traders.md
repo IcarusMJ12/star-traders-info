@@ -31,6 +31,7 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | ECCM Screen Matrix 5            | 1       |
 | Fuel-Cargo Hold 5               | 1       |
 | Battle Launch Bay               | 1       |
+||
 | Cerulean Tri-Arc                | 2       |
 | Cadonya Buster Array            | 2       |
 | Interlocking Sensor Matrix 4    | 2       |
@@ -40,6 +41,7 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Battle Prow 5                   | 2       |
 | Warhammer Hyperwarp Drive       | 2       |
 | Targetlock Matrix 5             | 2       |
+||
 | Depth Scanner Omega             | 3       |
 | Depth Scanner Omega-X           | 3       |
 | Multi-Signal Array              | 3       |
@@ -50,6 +52,7 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Scout-Stealth Bridge 5          | 3       |
 | Peak Velocity Matrix 4          | 3       |
 | Quturaan Phase Infector 3       | 3       |
+||
 | Orbital Fuel Scoop 3            | 4       |
 | Orbital Fuel Scoop 4            | 4       |
 | Salvage Bay 4                   | 4       |
@@ -64,6 +67,7 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Interlock Matrix 5              | 4       |
 | Tactician's Annex               | 4       |
 | Katteduun Phase Infector 4      | 4       |
+||
 | Resource Processor              | 5       |
 | Javat Mechi-Reaper              | 5       |
 | Defense Pattern Matrix 4        | 5       |
@@ -75,6 +79,7 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Water-Fuel Reclamation 3        | 5       |
 | Performance Hyperwarp Drive     | 5       |
 | Water-Fuel Reclamation 4        | 5       |
+||
 | Hyperion Exo-Suits              | 6       |
 | Hazuk Duo-Arc                   | 6       |
 | Boarding Assault System 4       | 6       |
@@ -85,12 +90,14 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Scout-Vanguard Bridge 5         | 6       |
 | Performance Hyperwarp Drive     | 6       |
 | Warden's Annex                  | 6       |
+||
 | Targeting Matrix 4              | 7       |
 | Cargo Hold 5                    | 7       |
 | M9000 Void Engine: Behemoth     | 7       |
 | Warhammer Hyperwarp Drive       | 7       |
 | Capital Freighter Bridge 5      | 7       |
 | Performance Hyperwarp Drive     | 7       |
+||
 | Mesa Radiate-Seal               | 8       |
 | Reinforced Fuel Tank            | 8       |
 | Reinforced Fuel Pod             | 8       |
@@ -105,6 +112,7 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Navigation Annex                | 8       |
 | Warhawk Launch Bay              | 8       |
 | Joint Precision Launch System 3 | 8       |
+||
 | Armored Officer Suites          | 9       |
 | Armored Bulkheads 5             | 9       |
 | Reinforced Structures 5         | 9       |
@@ -574,7 +582,7 @@ select basemass as mass, unlockid > 0 as lock, shiptypename as name, hullpoints 
 
 | mass | lock |           name            | hull | arm | shld | fuel | off | crew | s  | m  | l | scout | f |
 |------|------|---------------------------|------|-----|------|------|-----|------|----|----|---|-------|---|
-| 2400 | 0    | Scout Cutter              | 900  | 12  | 12   | 60   | 4   | 24   | 11 | 3  | 2 | 0     | 0 |
+| 2400 | 0    | Scout Cutter              | 900  | 12  | 12   | 60   | 4   | 24   | 11 | 3  | 2 | 0     | 0 | trash, only scout-class that's not even a scout
 | 2400 | 0    | Allistar Liner            | 1000 | 10  | 14   | 95   | 4   | 24   | 10 | 3  | 2 | 1     | 0 |
 | 2400 | 1    | Reach Vindex              | 1000 | 10  | 14   | 95   | 4   | 24   | 11 | 3  | 2 | 1     | 0 |
 | 2400 | 0    | Volk Frigate              | 1350 | 6   | 12   | 45   | 5   | 24   | 11 | 3  | 2 | 1     | 0 |
