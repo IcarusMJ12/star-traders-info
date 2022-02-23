@@ -452,6 +452,7 @@ where componenttype = 4 and factionid < 10 order by type, s, componentlevel;
 | 1    | 1 | M101 Tracker Cannon        | 3   | 11  | 0   | 100  | 0       | 95  | 65   | 1    | 75  | 1   | 1  | 12  | 1    | 15   | 40  | 0   | 0    |
 | 1    | 2 | M90 Barrel-Cannon          | 2   | 6   | 0   | 300  | 0       | 135 | 52   | 1    | 85  | 1   | 2  | 2   | 1    | 12   | 45  | 0   | 0    |
 | 1    | 2 | M94 Barrel-Cannon          | 2   | 7   | 0   | 300  | 0       | 160 | 50   | 1    | 85  | 1   | 2  | 5   | 1    | 10   | 55  | 0   | 0    |
+||
 | 2    | 1 | Phoenix Lance              | 2   | 4   | 0   | 150  | 0       | 100 | 40   | 0    | 20  | 2   | 2  | 2   | 1    | 15   | 55  | 20  | 0    |
 | 2    | 1 | HX-Cycle Lance             | 2   | 5   | 1   | 150  | 0       | 120 | 40   | 0    | 20  | 2   | 2  | 4   | 1    | 15   | 60  | 25  | 0    |
 | 2    | 1 | HX-2 Lance                 | 2   | 7   | 1   | 150  | 0       | 140 | 40   | 0    | 20  | 2   | 2  | 6   | 1    | 10   | 55  | 35  | 0    |
@@ -462,6 +463,7 @@ where componenttype = 4 and factionid < 10 order by type, s, componentlevel;
 | 2    | 2 | Thunder XK3 Lance Array    | 3   | 10  | 2   | 350  | 0       | 275 | 40   | 0    | 30  | 2   | 3  | 8   | 1    | 10   | 55  | 10  | 0    |
 | 2    | 2 | Hazuk Duo-Arc              | 4   | 13  | 3   | 350  | 6       | 280 | 40   | 0    | 15  | 2   | 3  | 10  | 1    | 10   | 60  | 45  | 0    |
 | 2    | 2 | Cerulean Tri-Arc           | 4   | 13  | 3   | 350  | 2       | 310 | 40   | 0    | 50  | 2   | 3  | 11  | 1    | 20   | 65  | 35  | 0    |
+||
 | 3    | 1 | Imperator PC-1             | 1   | 4   | 0   | 100  | 0       | 116 | 20   | 0    | 10  | 3   | 2  | 1   | 2    | 15   | 40  | 22  | 0    |
 | 3    | 1 | Stalwart PC-1              | 2   | 5   | 1   | 100  | 0       | 120 | 20   | 0    | 10  | 3   | 2  | 2   | 2    | 30   | 40  | 30  | 0    |
 | 3    | 1 | Commander PC-1             | 2   | 7   | 1   | 100  | 0       | 100 | 20   | 0    | 10  | 3   | 2  | 4   | 2    | 25   | 40  | 80  | 0    |
@@ -475,6 +477,7 @@ where componenttype = 4 and factionid < 10 order by type, s, componentlevel;
 | 3    | 3 | Obliterator PK-2           | 3   | 11  | 2   | 550  | 0       | 150 | 20   | 0    | 5   | 3   | 4  | 9   | 2    | 35   | 45  | 170 | 0    |
 | 3    | 3 | Obliterator PKX-3          | 4   | 11  | 2   | 550  | 0       | 150 | 20   | 0    | 5   | 3   | 4  | 11  | 2    | 35   | 50  | 190 | 0    |
 | 3    | 3 | Interceder PCX-5           | 3   | 12  | 3   | 550  | 0       | 50  | 30   | 0    | 5   | 3   | 4  | 10  | 2    | 35   | 50  | 275 | 0    |
+||
 | 4    | 1 | Light Railgun              | 2   | 3   | 0   | 125  | 0       | 90  | 20   | 0    | 60  | 3   | 3  | 3   | 1    | 5    | 35  | 0   | 80   |
 | 4    | 1 | Lightspear Railgun         | 2   | 4   | 2   | 125  | 0       | 100 | 20   | 0    | 60  | 3   | 3  | 5   | 1    | 10   | 35  | 0   | 90   |
 | 4    | 1 | Blazelight Railgun         | 2   | 6   | 2   | 125  | 0       | 100 | 20   | 0    | 60  | 3   | 3  | 7   | 1    | 10   | 40  | 0   | 100  |
@@ -488,6 +491,7 @@ where componenttype = 4 and factionid < 10 order by type, s, componentlevel;
 | 4    | 2 | Tri Helical Rail X3        | 4   | 10  | 2   | 300  | 0       | 200 | 20   | 0    | 65  | 3   | 4  | 14  | 1    | 25   | 45  | 0   | 190  |
 | 4    | 2 | Demon-X Heavy Rail         | 5   | 11  | 2   | 300  | 0       | 240 | 40   | 0    | 60  | 3   | 4  | 15  | 1    | 20   | 55  | 0   | 200  |
 | 4    | 2 | Demon-X Fast Rail          | 4   | 10  | 2   | 300  | 0       | 200 | 30   | 0    | 50  | 3   | 3  | 11  | 1    | 25   | 40  | 0   | 200  |
+||
 | 5    | 2 | Vengence Gravcannon        | 1   | 5   | 0   | 325  | 0       | 180 | 90   | 1    | 0   | 2   | 3  | 0   | 2    | 15   | 30  | 0   | 0    |
 | 5    | 2 | Retaliation Gravcannon     | 2   | 5   | 0   | 350  | 0       | 185 | 90   | 1    | 0   | 2   | 3  | 2   | 2    | 30   | 40  | 0   | 0    |
 | 5    | 2 | JUK Gravity Array          | 2   | 6   | 0   | 350  | 0       | 200 | 90   | 1    | 0   | 2   | 3  | 2   | 2    | 35   | 40  | 0   | 0    |
@@ -498,6 +502,7 @@ where componenttype = 4 and factionid < 10 order by type, s, componentlevel;
 | 5    | 3 | Ruut 84 Gravcannon         | 2   | 12  | 0   | 600  | 0       | 320 | 100  | 1    | 0   | 2   | 4  | 4   | 2    | 45   | 40  | 0   | 0    |
 | 5    | 3 | Retribution Gravcannon     | 3   | 13  | 0   | 600  | 0       | 350 | 100  | 1    | 0   | 2   | 4  | 5   | 2    | 45   | 40  | 0   | 0    |
 | 5    | 3 | Coronation Gravcannon      | 2   | 15  | 0   | 600  | 0       | 400 | 100  | 1    | 0   | 2   | 4  | 6   | 2    | 20   | 65  | 0   | 0    |
+||
 | 6    | 1 | Hydra Missile Array        | 2   | 4   | 1   | 125  | 0       | 120 | 100  | 0    | 30  | 4   | 3  | 8   | 2    | 30   | 30  | 25  | 0    |
 | 6    | 1 | Arratech Missile Pod       | 2   | 6   | 1   | 125  | 0       | 125 | 100  | 0    | 30  | 4   | 3  | 10  | 2    | 30   | 25  | 30  | 0    |
 | 6    | 1 | Aramech Missile Pod        | 2   | 8   | 1   | 125  | 0       | 130 | 100  | 0    | 30  | 4   | 3  | 11  | 2    | 25   | 30  | 35  | 0    |
@@ -510,6 +515,7 @@ where componenttype = 4 and factionid < 10 order by type, s, componentlevel;
 | 6    | 2 | Vector Missile System      | 3   | 7   | 1   | 300  | 0       | 140 | 100  | 0    | 40  | 4   | 3  | 8   | 2    | 30   | 15  | 30  | 0    |
 | 6    | 2 | Dual-Linked Vector Missile | 3   | 10  | 1   | 300  | 0       | 160 | 100  | 0    | 40  | 4   | 3  | 10  | 2    | 30   | 20  | 60  | 0    |
 | 6    | 2 | Goliath Missile Battery    | 3   | 12  | 2   | 300  | 0       | 170 | 100  | 0    | 40  | 4   | 3  | 14  | 2    | 40   | 25  | 80  | 0    |
+||
 | 7    | 1 | Hellfire Torpedo           | 2   | 4   | 0   | 110  | 0       | 20  | 40   | 0    | 20  | 5   | 2  | 4   | 1    | 2    | 45  | 0   | 30   |
 | 7    | 1 | Firestorm Torpedo          | 2   | 6   | 1   | 110  | 0       | 30  | 40   | 0    | 20  | 5   | 2  | 8   | 1    | 3    | 50  | 0   | 40   |
 | 7    | 1 | Inferno Torpedo            | 2   | 11  | 2   | 110  | 0       | 35  | 40   | 0    | 20  | 5   | 2  | 10  | 1    | 8    | 50  | 0   | 45   |
