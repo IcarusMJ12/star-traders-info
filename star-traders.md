@@ -31,6 +31,7 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | ECCM Screen Matrix 5            | 1       |
 | Fuel-Cargo Hold 5               | 1       |
 | Battle Launch Bay               | 1       |
+| ECCM Screen Matrix 6            | 1       |
 ||
 | Cerulean Tri-Arc                | 2       |
 | Cadonya Buster Array            | 2       |
@@ -51,22 +52,24 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Redlance Goltha Scanner         | 3       |
 | Scout-Stealth Bridge 5          | 3       |
 | Peak Velocity Matrix 4          | 3       |
-| Quturaan Phase Infector 3       | 3       |
+| Quturaan Phase Inflector 3      | 3       |
 ||
-| Orbital Fuel Scoop 3            | 4       |
 | Orbital Fuel Scoop 4            | 4       |
 | Salvage Bay 4                   | 4       |
 | M5000 Void Engine: Behemoth     | 4       |
 | Armored Cargo Hold 4            | 4       |
 | Lion Mass Reducer 4             | 4       |
 | Interlocking Sensor Matrix 5    | 4       |
-| Reactive Hangar Bay             | 4       |
 | Warhammer Hyperwarp Drive       | 4       |
 | Salvage Bay 5                   | 4       |
 | Armored Salvage Bay 5           | 4       |
 | Interlock Matrix 5              | 4       |
 | Tactician's Annex               | 4       |
-| Katteduun Phase Infector 4      | 4       |
+| Katteduun Phase Inflector 4     | 4       |
+| Orbital Fuel Scoop 5            | 4       |
+| Advanced Hangar Bay             | 4       |
+| Interlocking Sensor Matrix 6    | 4       |
+| Salvage Bay 6                   | 4       |
 ||
 | Resource Processor              | 5       |
 | Javat Mechi-Reaper              | 5       |
@@ -79,6 +82,8 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Water-Fuel Reclamation 3        | 5       |
 | Performance Hyperwarp Drive     | 5       |
 | Water-Fuel Reclamation 4        | 5       |
+| Water-Fuel Reclamation 5        | 5       |
+| Water-Fuel Reclamation 6        | 5       |
 ||
 | Hyperion Exo-Suits              | 6       |
 | Hazuk Duo-Arc                   | 6       |
@@ -97,6 +102,7 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Warhammer Hyperwarp Drive       | 7       |
 | Capital Freighter Bridge 5      | 7       |
 | Performance Hyperwarp Drive     | 7       |
+| Armored Cargo Hold 5            | 7       |
 ||
 | Mesa Radiate-Seal               | 8       |
 | Reinforced Fuel Tank            | 8       |
@@ -112,6 +118,7 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Navigation Annex                | 8       |
 | Warhawk Launch Bay              | 8       |
 | Joint Precision Launch System 3 | 8       |
+| Battle Bridge 4                 | 8       |
 ||
 | Armored Officer Suites          | 9       |
 | Armored Bulkheads 5             | 9       |
@@ -123,7 +130,6 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Performance Hyperwarp Drive     | 9       |
 | Fuel Helix Coil 4               | 9       |
 | Fuel Helix Coil 5               | 9       |
-
 
 ## Ship Components - Core
 
@@ -174,6 +180,7 @@ select componentsize as s, componentname as name, skpilot as pil, skshipops as o
 | 2 | Battle Bridge              | 6   | 3   | 4   | 6   | 4   | 2   | 0   | 250  | 8       |
 | 2 | Battle Bridge 2            | 8   | 4   | 5   | 8   | 3   | 2   | 0   | 250  | 8       |
 | 2 | Battle Bridge 3            | 9   | 4   | 6   | 8   | 4   | 2   | 0   | 250  | 8       |
+| 2 | Battle Bridge 4            | 9   | 4   | 6   | 8   | 4   | 2   | 0   | 250  | 8       |
 ||
 | 3 | Capital Bridge             | 9   | 5   | 8   | 8   | 0   | 0   | 0   | 600  | 0       |
 | 3 | Capital Bridge 2           | 9   | 5   | 9   | 9   | 0   | 0   | 0   | 600  | 0       |
@@ -339,8 +346,13 @@ from shipcomponent where componenttype = 2 and factionid < 10 order by s, cargo,
 | 3 | Armored Cargo Hold 4 | 0   | 4   | 40    | 65   | 3   | 3   | 1   | 625  | 4       |
 | 3 | Cargo Hold 3         | 0   | 4   | 40    | 60   | 0   | 0   | 0   | 625  | 0       |
 | 3 | Cargo Hold 4         | 0   | 4   | 45    | 70   | 0   | 0   | 0   | 625  | 0       |
+| 3 | Armored Cargo Hold 5 | 0   | 4   | 50    | 75   | 2   | 5   | 0   | 625  | 7       |
 | 3 | Cargo Hold 5         | 0   | 4   | 50    | 75   | 2   | 0   | 0   | 625  | 7       |
+| 3 | Armored Cargo Hold 6 | 0   | 6   | 60    | 75   | 2   | 6   | 0   | 625  | 0       |
+| 3 | Cargo Hold 6         | 0   | 6   | 60    | 75   | 2   | 0   | 0   | 625  | 0       |
 | 3 | Hauler Hold          | 0   | 5   | 65    | 40   | 2   | 0   | 3   | 625  | 5       |
+| 3 | Cargo Hold 7         | 0   | 6   | 70    | 75   | 2   | 0   | 0   | 625  | 0       |
+| 3 | Cargo Hold 8         | 0   | 7   | 80    | 80   | 2   | 0   | 0   | 625  | 0       |
 
 
 #### Cargo and Fuel Combined
@@ -362,6 +374,7 @@ select componentsize as size, componentname as name, holdscargo as cargo, fuelbo
 | 1    | Small Fuel Tank 4          | 0     | 38   |
 | 1    | Cargo-Fuel Pod             | 5     | 10   |
 | 1    | Storage Cache              | 10    | 0    |
+||
 | 2    | EVA Deck 1                 | 0     | 5    |
 | 2    | Orbital Fuel Scoop 1       | 0     | 10   |
 | 2    | EVA Deck 2                 | 0     | 10   |
@@ -369,6 +382,7 @@ select componentsize as size, componentname as name, holdscargo as cargo, fuelbo
 | 2    | Reinforced Hangar Bay      | 0     | 10   |
 | 2    | Fuel Helix Coil 2          | 0     | 10   |
 | 2    | Reactive Hangar Bay        | 0     | 12   |
+| 2    | Advanced Hangar Bay        | 0     | 12   |
 | 2    | Fuel Helix Coil 3          | 0     | 14   |
 | 2    | L-Support Rover            | 0     | 15   |
 | 2    | EVA Deck 3                 | 0     | 15   |
@@ -378,23 +392,28 @@ select componentsize as size, componentname as name, holdscargo as cargo, fuelbo
 | 2    | Fuel Helix Coil 4          | 0     | 18   |
 | 2    | Orbital Fuel Scoop 2       | 0     | 20   |
 | 2    | EVA Deck 4                 | 0     | 20   |
+| 2    | Reactive Hangar Bay        | 0     | 20   |
 | 2    | Fuel Helix Coil 5          | 0     | 22   |
 | 2    | Orbital Fuel Scoop 3       | 0     | 25   |
 | 2    | Orbital Fuel Scoop 4       | 0     | 30   |
-| 2    | Water-Fuel Reclamation 4   | 0     | 30   |
 | 2    | Water-Fuel Reclamation 2   | 0     | 32   |
 | 2    | Fuel Tank 1                | 0     | 40   |
 | 2    | Water-Fuel Reclamation 3   | 0     | 40   |
+| 2    | Orbital Fuel Scoop 5       | 0     | 40   |
 | 2    | Fuel Tank 2                | 0     | 48   |
+| 2    | Water-Fuel Reclamation 4   | 0     | 48   |
 | 2    | Fuel Tank 3                | 0     | 56   |
+| 2    | Water-Fuel Reclamation 5   | 0     | 56   |
 | 2    | Reinforced Fuel Tank       | 0     | 64   |
+| 2    | Water-Fuel Reclamation 6   | 0     | 64   |
 | 2    | Fuel Tank 4                | 0     | 84   |
 | 2    | Extraction Drill           | 10    | 0    |
 | 2    | Armored Storage            | 10    | 0    |
-| 2    | Harvester Bay              | 15    | 0    |
+| 2    | Harvester Bay              | 15    | 10   |
 | 2    | Cargo-Fuel Storage         | 15    | 15   |
-| 2    | Resource Processor         | 20    | 10   |
+| 2    | Resource Processor         | 20    | 15   |
 | 2    | Storage Hold               | 25    | 0    |
+||
 | 3    | Battle Launch Bay          | 0     | 20   |
 | 3    | Exo-Crawler                | 0     | 25   |
 | 3    | Shielded Launch Bay        | 0     | 30   |
@@ -411,7 +430,7 @@ select componentsize as size, componentname as name, holdscargo as cargo, fuelbo
 | 3    | Salvage Bay 2              | 15    | 10   |
 | 3    | Armored Salvage Bay 5      | 15    | 15   |
 | 3    | Salvage Bay 3              | 20    | 15   |
-| 3    | Javat Mechi-Reaper         | 25    | 15   |
+| 3    | Javat Mechi-Reaper         | 25    | 20   |
 | 3    | Salvage Bay 4              | 25    | 20   |
 | 3    | Capital Freighter Bridge 5 | 25    | 25   |
 | 3    | Cargo Hold 1               | 25    | 40   |
@@ -419,12 +438,17 @@ select componentsize as size, componentname as name, holdscargo as cargo, fuelbo
 | 3    | Cargo Hold 2               | 35    | 50   |
 | 3    | Fuel-Cargo Hold 4          | 35    | 95   |
 | 3    | Fuel-Cargo Hold 5          | 35    | 120  |
+| 3    | Salvage Bay 6              | 40    | 40   |
 | 3    | Cargo Hold 3               | 40    | 60   |
 | 3    | Armored Cargo Hold 4       | 40    | 65   |
 | 3    | Cargo Hold 4               | 45    | 70   |
 | 3    | Cargo Hold 5               | 50    | 75   |
+| 3    | Armored Cargo Hold 5       | 50    | 75   |
+| 3    | Cargo Hold 6               | 60    | 75   |
+| 3    | Armored Cargo Hold 6       | 60    | 75   |
 | 3    | Hauler Hold                | 65    | 40   |
-
+| 3    | Cargo Hold 7               | 70    | 75   |
+| 3    | Cargo Hold 8               | 80    | 80   |
 
 
 ### Weapons
@@ -526,6 +550,7 @@ where componenttype = 4 and factionid < 10 order by type, s, componentlevel;
 | 7    | 2 | Torpedo MK2-Alpha          | 3   | 13  | 3   | 325  | 0       | 40  | 50   | 0    | 10  | 5   | 3  | 14  | 1    | 10   | 60  | 0   | 90   |
 | 7    | 3 | Cadonya Buster Array       | 6   | 16  | 6   | 600  | 2       | 100 | 60   | 0    | 50  | 5   | 4  | 16  | 1    | 12   | 65  | 0   | 80   |
 
+
 ### TODO
 
 
@@ -545,6 +570,7 @@ select componentsize as size, componentname as name, skPilot as pil, skShipOps a
 | 1    | Mass Dampener 2      | 0   | 2   | 0    | 1   | 0       | 4   | -180 | 45    |
 | 1    | Mass Dampener 3      | 0   | 3   | 0    | 2   | 0       | 5   | -210 | 42    |
 | 1    | Mass Dampener 4      | 0   | 3   | 0    | 2   | 0       | 6   | -240 | 40    |
+||
 | 2    | Mass Reducer 1       | 0   | 1   | 1    | 0   | 0       | 2   | -225 | 112   |
 | 2    | Mass Reducer 2       | 0   | 2   | 2    | 0   | 0       | 3   | -240 | 80    |
 | 2    | Mass Reducer 3       | 0   | 2   | 3    | 0   | 0       | 4   | -260 | 65    |
@@ -555,6 +581,8 @@ select componentsize as size, componentname as name, skPilot as pil, skShipOps a
 | 2    | Adv. Mass Dampener 2 | 0   | 3   | 0    | 1   | 0       | 7   | -330 | 47    |
 | 2    | Adv. Mass Dampener 3 | 0   | 4   | 0    | 2   | 0       | 8   | -360 | 45    |
 | 2    | Adv. Mass Dampener 4 | 0   | 5   | 0    | 3   | 0       | 9   | -400 | 44    |
+| 2    | Adv. Mass Dampener 5 | 0   | 5   | 0    | 3   | 0       | 12  | -460 | 38    |
+
 
 ## Ships
 
@@ -581,6 +609,8 @@ select shiptypename, unlockid > 0 as lock from shiptype where startingship = 1 o
 | Cautela Heavylift    | 0    | A    |
 | Dragoon Cruiser      | 0    | A    |
 | Degla Megalift       | 1    | A    |
+| Shizari Huntress     | 1    | A    |
+
 
 ```sqlite3
 select basemass as mass, unlockid > 0 as lock, shiptypename as name, hullpoints as hull, basearmor as arm, basedeflection as shld, basefuel as fuel, maxofficer as off, maxlifesupport as crew, smallslots as s, mediumslots as m, largeslots as l, _id in (select shipId from shipdatacompartment where componenttype = 1 and size = 1) as scout, factionid as f from shiptype where startingship > 0 order by mass, off, crew;
@@ -588,13 +618,14 @@ select basemass as mass, unlockid > 0 as lock, shiptypename as name, hullpoints 
 
 | mass | lock |           name            | hull | arm | shld | fuel | off | crew | s  | m  | l | scout | f |
 |------|------|---------------------------|------|-----|------|------|-----|------|----|----|---|-------|---|
-| 2400 | 0    | Scout Cutter              | 900  | 12  | 12   | 60   | 4   | 24   | 11 | 3  | 2 | 0     | 0 | trash, only scout-class that's not even a scout
+| 2400 | 0    | Scout Cutter              | 900  | 12  | 12   | 60   | 4   | 24   | 11 | 3  | 2 | 0     | 0 |
 | 2400 | 0    | Allistar Liner            | 1000 | 10  | 14   | 95   | 4   | 24   | 10 | 3  | 2 | 1     | 0 |
 | 2400 | 1    | Reach Vindex              | 1000 | 10  | 14   | 95   | 4   | 24   | 11 | 3  | 2 | 1     | 0 |
 | 2400 | 0    | Volk Frigate              | 1350 | 6   | 12   | 45   | 5   | 24   | 11 | 3  | 2 | 1     | 0 |
 | 2400 | 1    | Aeternum Vindex           | 1000 | 14  | 10   | 70   | 5   | 24   | 10 | 4  | 2 | 1     | 0 |
 | 2400 | 0    | Zartar Fang               | 1250 | 8   | 8    | 50   | 5   | 24   | 9  | 6  | 2 | 1     | 6 |
 | 2400 | 0    | Gunhawk Sabre             | 1100 | 12  | 12   | 60   | 6   | 18   | 10 | 7  | 1 | 1     | 3 |
+| 2400 | 0    | Caliga Vindex             | 1275 | 14  | 10   | 95   | 6   | 24   | 14 | 3  | 2 | 1     | 6 |
 ||
 | 3400 | 0    | Juror Class               | 1100 | 10  | 10   | 55   | 4   | 24   | 9  | 4  | 2 | 0     | 0 |
 | 3400 | 0    | Lightbow Raptor           | 1200 | 12  | 10   | 25   | 4   | 24   | 9  | 5  | 2 | 0     | 0 |
@@ -643,6 +674,7 @@ select basemass as mass, unlockid > 0 as lock, shiptypename as name, hullpoints 
 | 6000 | 0    | Fallen Carrier            | 1850 | 4   | 7    | 130  | 7   | 36   | 8  | 9  | 5 | 0     | 0 |
 | 6000 | 0    | Extremis Carrier          | 2005 | 5   | 8    | 80   | 7   | 36   | 7  | 10 | 5 | 0     | 0 |
 | 6000 | 0    | Vark Carrier              | 2500 | 9   | 10   | 90   | 7   | 36   | 8  | 10 | 5 | 0     | 9 |
+| 6000 | 1    | Shizari Huntress          | 2050 | 7   | 8    | 100  | 7   | 36   | 14 | 7  | 4 | 1     | 0 |
 ||
 | 7000 | 0    | Cautela Heavylift         | 2500 | 5   | 4    | 80   | 6   | 36   | 12 | 8  | 4 | 0     | 0 |
 | 7000 | 0    | Dragoon Cruiser           | 2350 | 6   | 5    | 100  | 6   | 36   | 12 | 8  | 4 | 0     | 0 |
