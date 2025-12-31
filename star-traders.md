@@ -1,5 +1,10 @@
 # Star Traders Database Diving
 
+```sqlite3
+.headers on
+.mode markdown --wrap 180
+```
+
 ## Factions
 
 ```
@@ -32,6 +37,8 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Fuel-Cargo Hold 5               | 1       |
 | Battle Launch Bay               | 1       |
 | ECCM Screen Matrix 6            | 1       |
+| Adv. Mass Dampener 5            | 1       |
+| Adv. Mass Dampener 6            | 1       |
 ||
 | Cerulean Tri-Arc                | 2       |
 | Cadonya Buster Array            | 2       |
@@ -42,17 +49,31 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Battle Prow 5                   | 2       |
 | Warhammer Hyperwarp Drive       | 2       |
 | Targetlock Matrix 5             | 2       |
+| Adv. Mass Dampener 5            | 2       |
+| Adv. Mass Dampener 6            | 2       |
+| Scout Bridge 6                  | 2       |
+| Battle Prow 6                   | 2       |
+| Battle Prow 7                   | 2       |
+| Battle Prow 8                   | 2       |
+| Cloaked Cargo Hold 4            | 2       |
+| Dagger Prow 1                   | 2       |
+| Dagger Prow 2                   | 2       |
+| Dagger Prow 3                   | 2       |
 ||
 | Depth Scanner Omega             | 3       |
 | Depth Scanner Omega-X           | 3       |
 | Multi-Signal Array              | 3       |
 | M6000 Void Engine: Behemoth     | 3       |
-| Sig Veil Field                  | 3       |
+| Signal Veil Field               | 3       |
 | Redlight Goltha Scanner         | 3       |
 | Redlance Goltha Scanner         | 3       |
 | Scout-Stealth Bridge 5          | 3       |
 | Peak Velocity Matrix 4          | 3       |
 | Quturaan Phase Inflector 3      | 3       |
+| Adv. Mass Dampener 5            | 3       |
+| Adv. Mass Dampener 6            | 3       |
+| Redlance Goltha Veil            | 3       |
+| Cloaked Cargo Hold 6            | 3       |
 ||
 | Orbital Fuel Scoop 4            | 4       |
 | Salvage Bay 4                   | 4       |
@@ -67,9 +88,12 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Tactician's Annex               | 4       |
 | Katteduun Phase Inflector 4     | 4       |
 | Orbital Fuel Scoop 5            | 4       |
-| Advanced Hangar Bay             | 4       |
+| Fidelis Hangar Bay              | 4       |
 | Interlocking Sensor Matrix 6    | 4       |
-| Salvage Bay 6                   | 4       |
+| Armored Salvage Bay 6           | 4       |
+| Adv. Mass Dampener 5            | 4       |
+| Adv. Mass Dampener 6            | 4       |
+| Scout Bridge 7                  | 4       |
 ||
 | Resource Processor              | 5       |
 | Javat Mechi-Reaper              | 5       |
@@ -84,6 +108,9 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Water-Fuel Reclamation 4        | 5       |
 | Water-Fuel Reclamation 5        | 5       |
 | Water-Fuel Reclamation 6        | 5       |
+| Adv. Mass Dampener 5            | 5       |
+| Adv. Mass Dampener 6            | 5       |
+| Cloaked Cargo Hold 7            | 5       |
 ||
 | Hyperion Exo-Suits              | 6       |
 | Hazuk Duo-Arc                   | 6       |
@@ -95,6 +122,15 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Scout-Vanguard Bridge 5         | 6       |
 | Performance Hyperwarp Drive     | 6       |
 | Warden's Annex                  | 6       |
+| Adv. Mass Dampener 5            | 6       |
+| Adv. Mass Dampener 6            | 6       |
+| Boarding Assault System 5       | 6       |
+| Boarding Assault System 6       | 6       |
+| Boarding Assault System 7       | 6       |
+| Boarding Assault System 8       | 6       |
+| Reinforced Boarding Assault 4   | 6       |
+| Cloaked Boarding Assault 4      | 6       |
+| Raptor Heavy Hull Plating       | 6       |
 ||
 | Targeting Matrix 4              | 7       |
 | Cargo Hold 5                    | 7       |
@@ -103,6 +139,9 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Capital Freighter Bridge 5      | 7       |
 | Performance Hyperwarp Drive     | 7       |
 | Armored Cargo Hold 5            | 7       |
+| Adv. Mass Dampener 5            | 7       |
+| Adv. Mass Dampener 6            | 7       |
+| Cloaked Cargo Hold 5            | 7       |
 ||
 | Mesa Radiate-Seal               | 8       |
 | Reinforced Fuel Tank            | 8       |
@@ -119,6 +158,10 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Warhawk Launch Bay              | 8       |
 | Joint Precision Launch System 3 | 8       |
 | Battle Bridge 4                 | 8       |
+| Adv. Mass Dampener 5            | 8       |
+| Adv. Mass Dampener 6            | 8       |
+| Warhawk Hangar Bay              | 8       |
+| Cloaked Cargo Hold 8            | 8       |
 ||
 | Armored Officer Suites          | 9       |
 | Armored Bulkheads 5             | 9       |
@@ -130,6 +173,9 @@ select componentname as name, factionid as faction from shipcomponent where fact
 | Performance Hyperwarp Drive     | 9       |
 | Fuel Helix Coil 4               | 9       |
 | Fuel Helix Coil 5               | 9       |
+| Adv. Mass Dampener 5            | 9       |
+| Adv. Mass Dampener 6            | 9       |
+
 
 ## Ship Components - Core
 
@@ -156,6 +202,7 @@ select effectName as name, craftmovestatus as craftmove, rangedattackbonus as at
 | Capital Carrier Bridge 5 | 12        | 0      | 0   | 0      | 0       | 0    | 0      | 0     | 0      |
 | Scout-Vanguard Bridge 5  | 0         | 0      | 4   | 0      | 0       | 0    | 0      | 0     | 0      |
 | Compact Capital Bridge 4 | 0         | 0      | 0   | 0      | 0       | 0    | 0      | 0     | 1      |
+| Scout Bridge 6,7         | 0         | 0      | 4   | 0      | 0       | 10   | 0      | 0     | 0      |
 
 
 ```sqlite3
@@ -172,6 +219,8 @@ select componentsize as s, componentname as name, skpilot as pil, skshipops as o
 | 1 | Scout-Skirmish Bridge 5    | 8   | 4   | 6   | 6   | 4   | 4   | 4   | 100  | 8       |
 | 1 | Scout-Hauler Bridge 5      | 8   | 4   | 5   | 8   | -5  | 2   | 2   | -100 | 9       |
 | 1 | Scout-Vanguard Bridge 5    | 6   | 5   | 8   | 6   | 2   | 2   | 2   | 100  | 6       |
+| 1 | Scout Bridge 6             | 8   | 4   | 6   | 5   | 3   | 4   | 4   | 100  | 2       |
+| 1 | Scout Bridge 7             | 8   | 5   | 6   | 6   | 3   | 4   | 4   | 100  | 4       |
 ||
 | 2 | Bridge                     | 5   | 3   | 4   | 5   | 0   | 0   | 0   | 300  | 0       |
 | 2 | Bridge 2                   | 6   | 3   | 5   | 5   | 0   | 0   | 0   | 300  | 0       |
@@ -208,16 +257,16 @@ where componenttype = 3 and factionid < 10 order by name;
 | M2400 Void Engine: Behemoth   | 8   | 6   | 6   | 2   | 7   | 2   | 200  | 6       | 9  | 3      | 29  | 27  | 3  | 0    | 7    |
 | M2400 Void Engine: Chaser     | 7   | 6   | 6   | 2   | 3   | 1   | 200  | 0       | 8  | 2      | 27  | 30  | 1  | 0    | 10   |
 | M2400 Void Engine: Dual-Field | 7   | 6   | 6   | 2   | 3   | 1   | 100  | 0       | 8  | 3      | 27  | 27  | 2  | 0    | 12   |
-| M2400 Void Engine: Longhaul   | 6   | 6   | 7   | 2   | 3   | 1   | 200  | 0       | 8  | 3      | 27  | 27  | 1  | 0    | 15   |
-| M2400 Void Engine: Traveler   | 6   | 6   | 6   | 2   | 3   | 1   | 200  | 0       | 8  | 3      | 30  | 27  | 2  | 0    | 6    |
+| M2400 Void Engine: Longhaul   | 6   | 6   | 7   | 2   | 4   | 1   | 200  | 0       | 8  | 3      | 27  | 27  | 1  | 0    | 15   |
+| M2400 Void Engine: Traveler   | 6   | 6   | 6   | 2   | 4   | 1   | 200  | 0       | 8  | 3      | 30  | 27  | 2  | 0    | 6    |
 | M2400 Void Engine: Warhammer  | 6   | 6   | 6   | 2   | 3   | 2   | 200  | 0       | 9  | 3      | 27  | 28  | 3  | 0    | 7    |
 ||
 | M3400 Void Engine: Balanced   | 8   | 8   | 7   | 2   | 2   | 0   | 400  | 0       | 8  | 3      | 24  | 24  | 2  | 0    | 12   |
 | M3400 Void Engine: Behemoth   | 8   | 9   | 7   | 2   | 8   | 3   | 450  | 5       | 9  | 3      | 27  | 24  | 3  | 0    | 7    |
 | M3400 Void Engine: Chaser     | 9   | 7   | 7   | 2   | 2   | 0   | 400  | 0       | 8  | 2      | 24  | 29  | 2  | 0    | 8    |
 | M3400 Void Engine: Dual-Field | 8   | 8   | 7   | 2   | 2   | 0   | 200  | 0       | 8  | 3      | 24  | 24  | 2  | 0    | 12   |
-| M3400 Void Engine: Longhaul   | 7   | 9   | 7   | 2   | 2   | 0   | 400  | 0       | 8  | 3      | 23  | 23  | 1  | 0    | 15   |
-| M3400 Void Engine: Traveler   | 7   | 7   | 9   | 2   | 2   | 0   | 400  | 0       | 8  | 3      | 29  | 24  | 2  | 0    | 8    |
+| M3400 Void Engine: Longhaul   | 7   | 9   | 7   | 2   | 3   | 0   | 400  | 0       | 8  | 3      | 23  | 23  | 1  | 0    | 15   |
+| M3400 Void Engine: Traveler   | 7   | 7   | 9   | 2   | 3   | 0   | 400  | 0       | 8  | 3      | 29  | 24  | 2  | 0    | 8    |
 | M3400 Void Engine: Warhammer  | 7   | 9   | 7   | 2   | 2   | 2   | 450  | 0       | 9  | 3      | 24  | 26  | 3  | 0    | 7    |
 ||
 | M5000 Void Engine: Balanced   | 9   | 9   | 6   | 0   | 0   | 0   | 700  | 0       | 8  | 4      | 19  | 19  | 2  | 0    | 10   |
@@ -225,7 +274,7 @@ where componenttype = 3 and factionid < 10 order by name;
 | M5000 Void Engine: Chaser     | 10  | 8   | 6   | 0   | 0   | 0   | 700  | 0       | 8  | 3      | 18  | 22  | 2  | 0    | 8    |
 | M5000 Void Engine: Dual-Field | 9   | 9   | 6   | 0   | 0   | 0   | 450  | 0       | 8  | 4      | 19  | 19  | 2  | 0    | 10   |
 | M5000 Void Engine: Longhaul   | 9   | 9   | 6   | 0   | 0   | 0   | 700  | 0       | 8  | 4      | 20  | 18  | 1  | 0    | 11   |
-| M5000 Void Engine: Traveler   | 8   | 10  | 6   | 0   | 0   | 0   | 700  | 0       | 8  | 4      | 23  | 16  | 3  | 0    | 8    |
+| M5000 Void Engine: Traveler   | 8   | 10  | 6   | 0   | 2   | 0   | 700  | 0       | 8  | 4      | 23  | 16  | 3  | 0    | 8    |
 | M5000 Void Engine: Warhammer  | 9   | 9   | 7   | 1   | 1   | 2   | 750  | 0       | 9  | 4      | 19  | 20  | 4  | 4    | 6    |
 ||
 | M6000 Void Engine: Balanced   | 11  | 9   | 8   | 0   | 0   | 0   | 1100 | 0       | 8  | 4      | 15  | 15  | 3  | 5    | 10   |
@@ -277,6 +326,7 @@ from shipcomponent where componenttype = 9 and factionid < 10 order by drivemass
 | 2400      | Kickstarter Hyperwarp Drive | 0   | 3   | 7   | 12  | 1   | 2   | 200  | 0       |
 | 2400      | Longhaul Hyperwarp Drive    | 0   | 3   | 8   | 10  | 0   | 1   | 200  | 0       |
 | 2400      | Performance Hyperwarp Drive | 0   | 5   | 7   | 24  | 0   | 0   | 190  | 6       |
+| 2400      | Traveler Hyperwarp Drive    | 0   | 3   | 7   | 16  | 1   | 0   | 200  | 0       |
 | 2400      | Warhammer Hyperwarp Drive   | 6   | 5   | 7   | 24  | 4   | 6   | 190  | 7       |
 ||
 | 3400      | Basic Hyperwarp Drive       | 0   | 3   | 10  | 18  | 0   | 2   | 225  | 0       |
@@ -284,6 +334,7 @@ from shipcomponent where componenttype = 9 and factionid < 10 order by drivemass
 | 3400      | Kickstarter Hyperwarp Drive | 0   | 4   | 11  | 16  | 1   | 1   | 225  | 0       |
 | 3400      | Longhaul Hyperwarp Drive    | 0   | 3   | 12  | 14  | 0   | 1   | 225  | 0       |
 | 3400      | Performance Hyperwarp Drive | 0   | 5   | 8   | 26  | 0   | 0   | 215  | 5       |
+| 3400      | Traveler Hyperwarp Drive    | 0   | 4   | 11  | 20  | 1   | 0   | 225  | 0       |
 | 3400      | Warhammer Hyperwarp Drive   | 6   | 5   | 8   | 26  | 4   | 6   | 215  | 8       |
 ||
 | 5000      | Basic Hyperwarp Drive       | 0   | 3   | 12  | 22  | 0   | 0   | 225  | 0       |
@@ -291,6 +342,7 @@ from shipcomponent where componenttype = 9 and factionid < 10 order by drivemass
 | 5000      | Kickstarter Hyperwarp Drive | 0   | 4   | 13  | 20  | 1   | 0   | 225  | 0       |
 | 5000      | Longhaul Hyperwarp Drive    | 0   | 4   | 14  | 18  | 0   | 0   | 225  | 0       |
 | 5000      | Performance Hyperwarp Drive | 0   | 6   | 8   | 31  | 0   | 0   | 215  | 0       |
+| 5000      | Traveler Hyperwarp Drive    | 0   | 4   | 13  | 24  | 1   | 0   | 225  | 0       |
 | 5000      | Warhammer Hyperwarp Drive   | 7   | 6   | 8   | 31  | 6   | 5   | 215  | 0       |
 ||
 | 6000      | Basic Hyperwarp Drive       | 0   | 6   | 14  | 26  | 0   | 0   | 300  | 0       |
@@ -343,17 +395,22 @@ from shipcomponent where componenttype = 2 and factionid < 10 order by s, cargo,
 | 3 | Cargo Hold 2         | 0   | 2   | 35    | 50   | 0   | 0   | 0   | 625  | 0       |
 | 3 | Fuel-Cargo Hold 4    | 0   | 4   | 35    | 95   | 0   | 0   | 0   | 625  | 1       |
 | 3 | Fuel-Cargo Hold 5    | 0   | 5   | 35    | 120  | 0   | 0   | 0   | 625  | 1       |
+| 3 | Armored Cargo Hold 3 | 0   | 4   | 40    | 60   | 0   | 2   | 0   | 625  | 0       |
 | 3 | Armored Cargo Hold 4 | 0   | 4   | 40    | 65   | 3   | 3   | 1   | 625  | 4       |
 | 3 | Cargo Hold 3         | 0   | 4   | 40    | 60   | 0   | 0   | 0   | 625  | 0       |
 | 3 | Cargo Hold 4         | 0   | 4   | 45    | 70   | 0   | 0   | 0   | 625  | 0       |
+| 3 | Cloaked Cargo Hold 4 | 0   | 4   | 45    | 70   | 0   | 0   | 0   | 625  | 2       |
 | 3 | Armored Cargo Hold 5 | 0   | 4   | 50    | 75   | 2   | 5   | 0   | 625  | 7       |
 | 3 | Cargo Hold 5         | 0   | 4   | 50    | 75   | 2   | 0   | 0   | 625  | 7       |
+| 3 | Cloaked Cargo Hold 5 | 0   | 4   | 50    | 75   | 2   | 0   | 0   | 625  | 7       |
 | 3 | Armored Cargo Hold 6 | 0   | 6   | 60    | 75   | 2   | 6   | 0   | 625  | 0       |
 | 3 | Cargo Hold 6         | 0   | 6   | 60    | 75   | 2   | 0   | 0   | 625  | 0       |
+| 3 | Cloaked Cargo Hold 6 | 0   | 6   | 60    | 75   | 2   | 0   | 0   | 625  | 3       |
 | 3 | Hauler Hold          | 0   | 5   | 65    | 40   | 2   | 0   | 3   | 625  | 5       |
 | 3 | Cargo Hold 7         | 0   | 6   | 70    | 75   | 2   | 0   | 0   | 625  | 0       |
+| 3 | Cloaked Cargo Hold 7 | 0   | 6   | 70    | 75   | 2   | 0   | 0   | 625  | 5       |
 | 3 | Cargo Hold 8         | 0   | 7   | 80    | 80   | 2   | 0   | 0   | 625  | 0       |
-
+| 3 | Cloaked Cargo Hold 8 | 0   | 7   | 80    | 80   | 2   | 0   | 0   | 625  | 8       |
 
 #### Cargo and Fuel Combined
 
@@ -363,92 +420,120 @@ select componentsize as size, componentname as name, holdscargo as cargo, fuelbo
 
 | size |            name            | cargo | fuel |
 |------|----------------------------|-------|------|
-| 1    | Reactor Spike Module 1     | 0     | 5    |
-| 1    | Reactor Spike Module 2     | 0     | 15   |
-| 1    | Small Fuel Tank 1          | 0     | 20   |
-| 1    | Reactor Spike Module 3     | 0     | 25   |
-| 1    | Small Fuel Tank 2          | 0     | 26   |
-| 1    | Small Fuel Tank 3          | 0     | 32   |
-| 1    | Reinforced Fuel Pod        | 0     | 32   |
-| 1    | Reactor Spike Module 4     | 0     | 35   |
-| 1    | Small Fuel Tank 4          | 0     | 38   |
-| 1    | Cargo-Fuel Pod             | 5     | 10   |
-| 1    | Storage Cache              | 10    | 0    |
+| 1    | Reactor Spike Module 1      | 0     | 5    |
+| 1    | Reactor Spike Module 2      | 0     | 15   |
+| 1    | Small Fuel Tank 1           | 0     | 20   |
+| 1    | Reactor Spike Module 3      | 0     | 25   |
+| 1    | Small Fuel Tank 2           | 0     | 26   |
+| 1    | Small Fuel Tank 3           | 0     | 32   |
+| 1    | Reinforced Fuel Pod         | 0     | 32   |
+| 1    | Reactor Spike Module 4      | 0     | 35   |
+| 1    | Small Fuel Tank 4           | 0     | 38   |
+| 1    | Cargo-Fuel Pod              | 5     | 10   |
+| 1    | Storage Cache               | 10    | 0    |
 ||
-| 2    | EVA Deck 1                 | 0     | 5    |
-| 2    | Orbital Fuel Scoop 1       | 0     | 10   |
-| 2    | EVA Deck 2                 | 0     | 10   |
-| 2    | Shielded Hangar Bay        | 0     | 10   |
-| 2    | Reinforced Hangar Bay      | 0     | 10   |
-| 2    | Fuel Helix Coil 2          | 0     | 10   |
-| 2    | Reactive Hangar Bay        | 0     | 12   |
-| 2    | Advanced Hangar Bay        | 0     | 12   |
-| 2    | Fuel Helix Coil 3          | 0     | 14   |
-| 2    | L-Support Rover            | 0     | 15   |
-| 2    | EVA Deck 3                 | 0     | 15   |
-| 2    | Hangar Bay                 | 0     | 15   |
-| 2    | Micro Launch Bay           | 0     | 15   |
-| 2    | Water-Fuel Reclamation 1   | 0     | 18   |
-| 2    | Fuel Helix Coil 4          | 0     | 18   |
-| 2    | Orbital Fuel Scoop 2       | 0     | 20   |
-| 2    | EVA Deck 4                 | 0     | 20   |
-| 2    | Reactive Hangar Bay        | 0     | 20   |
-| 2    | Fuel Helix Coil 5          | 0     | 22   |
-| 2    | Orbital Fuel Scoop 3       | 0     | 25   |
-| 2    | Orbital Fuel Scoop 4       | 0     | 30   |
-| 2    | Water-Fuel Reclamation 2   | 0     | 32   |
-| 2    | Fuel Tank 1                | 0     | 40   |
-| 2    | Water-Fuel Reclamation 3   | 0     | 40   |
-| 2    | Orbital Fuel Scoop 5       | 0     | 40   |
-| 2    | Fuel Tank 2                | 0     | 48   |
-| 2    | Water-Fuel Reclamation 4   | 0     | 48   |
-| 2    | Fuel Tank 3                | 0     | 56   |
-| 2    | Water-Fuel Reclamation 5   | 0     | 56   |
-| 2    | Reinforced Fuel Tank       | 0     | 64   |
-| 2    | Water-Fuel Reclamation 6   | 0     | 64   |
-| 2    | Fuel Tank 4                | 0     | 84   |
-| 2    | Extraction Drill           | 10    | 0    |
-| 2    | Armored Storage            | 10    | 0    |
-| 2    | Harvester Bay              | 15    | 10   |
-| 2    | Cargo-Fuel Storage         | 15    | 15   |
-| 2    | Resource Processor         | 20    | 15   |
-| 2    | Storage Hold               | 25    | 0    |
+| 2    | EVA Deck 1                  | 0     | 5    |
+| 2    | Orbital Fuel Scoop 1        | 0     | 10   |
+| 2    | EVA Deck 2                  | 0     | 10   |
+| 2    | Shielded Hangar Bay         | 0     | 10   |
+| 2    | Reinforced Hangar Bay       | 0     | 10   |
+| 2    | Fuel Helix Coil 2           | 0     | 10   |
+| 2    | Reinforced Micro Launch Bay | 0     | 10   |
+| 2    | Reactive Hangar Bay         | 0     | 12   |
+| 2    | Fidelis Hangar Bay          | 0     | 12   |
+| 2    | Fuel Helix Coil 3           | 0     | 14   |
+| 2    | L-Support Rover             | 0     | 15   |
+| 2    | EVA Deck 3                  | 0     | 15   |
+| 2    | Hangar Bay                  | 0     | 15   |
+| 2    | Micro Launch Bay            | 0     | 15   |
+| 2    | Water-Fuel Reclamation 1    | 0     | 18   |
+| 2    | Fuel Helix Coil 4           | 0     | 18   |
+| 2    | Orbital Fuel Scoop 2        | 0     | 20   |
+| 2    | EVA Deck 4                  | 0     | 20   |
+| 2    | Advanced Hangar Bay         | 0     | 20   |
+| 2    | Fuel Helix Coil 5           | 0     | 22   |
+| 2    | Orbital Fuel Scoop 3        | 0     | 25   |
+| 2    | Orbital Fuel Scoop 4        | 0     | 30   |
+| 2    | Water-Fuel Reclamation 2    | 0     | 32   |
+| 2    | Fuel Tank 1                 | 0     | 40   |
+| 2    | Water-Fuel Reclamation 3    | 0     | 40   |
+| 2    | Orbital Fuel Scoop 5        | 0     | 40   |
+| 2    | Fuel Tank 2                 | 0     | 48   |
+| 2    | Water-Fuel Reclamation 4    | 0     | 48   |
+| 2    | Fuel Tank 3                 | 0     | 56   |
+| 2    | Water-Fuel Reclamation 5    | 0     | 56   |
+| 2    | Reinforced Fuel Tank        | 0     | 64   |
+| 2    | Water-Fuel Reclamation 6    | 0     | 64   |
+| 2    | Fuel Tank 4                 | 0     | 84   |
+| 2    | Fuel Tank 5                 | 0     | 105  |
+| 2    | Fuel Tank 6                 | 0     | 130  |
+| 2    | Fuel Tank 7                 | 0     | 160  |
+| 2    | Fuel Tank 8                 | 0     | 190  |
+| 2    | Fuel Tank 9                 | 0     | 220  |
+| 2    | Extraction Drill            | 10    | 0    |
+| 2    | Armored Storage             | 10    | 0    |
+| 2    | Harvester Bay               | 15    | 10   |
+| 2    | Cargo-Fuel Storage          | 15    | 15   |
+| 2    | Resource Processor          | 20    | 15   |
+| 2    | Storage Hold                | 25    | 0    |
 ||
-| 3    | Battle Launch Bay          | 0     | 20   |
-| 3    | Exo-Crawler                | 0     | 25   |
-| 3    | Shielded Launch Bay        | 0     | 30   |
-| 3    | Reinforced Launch Bay      | 0     | 30   |
-| 3    | Launch Bay                 | 0     | 45   |
-| 3    | Warhawk Launch Bay         | 0     | 50   |
-| 3    | Advanced Launch Bay        | 0     | 60   |
-| 3    | Large Fuel Tank 1          | 0     | 75   |
-| 3    | Large Fuel Tank 2          | 0     | 95   |
-| 3    | Hyperion Launch Bay        | 0     | 100  |
-| 3    | Large Fuel Tank 3          | 0     | 135  |
-| 3    | Large Fuel Tank 4          | 0     | 160  |
-| 3    | Salvage Bay 1              | 10    | 5    |
-| 3    | Salvage Bay 2              | 15    | 10   |
-| 3    | Armored Salvage Bay 5      | 15    | 15   |
-| 3    | Salvage Bay 3              | 20    | 15   |
-| 3    | Javat Mechi-Reaper         | 25    | 20   |
-| 3    | Salvage Bay 4              | 25    | 20   |
-| 3    | Capital Freighter Bridge 5 | 25    | 25   |
-| 3    | Cargo Hold 1               | 25    | 40   |
-| 3    | Salvage Bay 5              | 30    | 25   |
-| 3    | Cargo Hold 2               | 35    | 50   |
-| 3    | Fuel-Cargo Hold 4          | 35    | 95   |
-| 3    | Fuel-Cargo Hold 5          | 35    | 120  |
-| 3    | Salvage Bay 6              | 40    | 40   |
-| 3    | Cargo Hold 3               | 40    | 60   |
-| 3    | Armored Cargo Hold 4       | 40    | 65   |
-| 3    | Cargo Hold 4               | 45    | 70   |
-| 3    | Cargo Hold 5               | 50    | 75   |
-| 3    | Armored Cargo Hold 5       | 50    | 75   |
-| 3    | Cargo Hold 6               | 60    | 75   |
-| 3    | Armored Cargo Hold 6       | 60    | 75   |
-| 3    | Hauler Hold                | 65    | 40   |
-| 3    | Cargo Hold 7               | 70    | 75   |
-| 3    | Cargo Hold 8               | 80    | 80   |
+| 3    | Battle Launch Bay           | 0     | 20   |
+| 3    | M2400 Void Engine: Longhaul | 0     | 25   |
+| 3    | M3400 Void Engine: Longhaul | 0     | 25   |
+| 3    | Exo-Crawler                 | 0     | 25   |
+| 3    | Shielded Launch Bay         | 0     | 30   |
+| 3    | Reinforced Launch Bay       | 0     | 30   |
+| 3    | M6000 Void Engine: Longhaul | 0     | 35   |
+| 3    | M5000 Void Engine: Longhaul | 0     | 35   |
+| 3    | Large Shielded Hangar Bay   | 0     | 40   |
+| 3    | Large Reinforced Hangar Bay | 0     | 40   |
+| 3    | Launch Bay                  | 0     | 45   |
+| 3    | M7000 Void Engine: Longhaul | 0     | 45   |
+| 3    | M8000 Void Engine: Longhaul | 0     | 45   |
+| 3    | Warhawk Launch Bay          | 0     | 50   |
+| 3    | M9000 Void Engine: Longhaul | 0     | 55   |
+| 3    | Advanced Launch Bay         | 0     | 60   |
+| 3    | Large Hangar Bay            | 0     | 60   |
+| 3    | Warhawk Hangar Bay          | 0     | 60   |
+| 3    | Cloaked Hangar Bay          | 0     | 60   |
+| 3    | Large Fuel Tank 1           | 0     | 75   |
+| 3    | Large Fuel Tank 2           | 0     | 95   |
+| 3    | Hyperion Launch Bay         | 0     | 100  |
+| 3    | Large Fuel Tank 3           | 0     | 135  |
+| 3    | Large Fuel Tank 4           | 0     | 160  |
+| 3    | Large Fuel Tank 5           | 0     | 220  |
+| 3    | Large Fuel Tank 6           | 0     | 300  |
+| 3    | Large Fuel Tank 7           | 0     | 380  |
+| 3    | Large Fuel Tank 8           | 0     | 450  |
+| 3    | Salvage Bay 1               | 10    | 5    |
+| 3    | Salvage Bay 2               | 15    | 10   |
+| 3    | Salvage Bay 3               | 20    | 15   |
+| 3    | Javat Mechi-Reaper          | 25    | 20   |
+| 3    | Salvage Bay 4               | 25    | 20   |
+| 3    | Capital Freighter Bridge 5  | 25    | 25   |
+| 3    | Cargo Hold 1                | 25    | 40   |
+| 3    | Salvage Bay 5               | 30    | 25   |
+| 3    | Armored Salvage Bay 5       | 35    | 25   |
+| 3    | Cargo Hold 2                | 35    | 50   |
+| 3    | Fuel-Cargo Hold 4           | 35    | 95   |
+| 3    | Fuel-Cargo Hold 5           | 35    | 120  |
+| 3    | Armored Salvage Bay 6       | 40    | 30   |
+| 3    | Cargo Hold 3                | 40    | 60   |
+| 3    | Armored Cargo Hold 3        | 40    | 60   |
+| 3    | Armored Cargo Hold 4        | 40    | 65   |
+| 3    | Cargo Hold 4                | 45    | 70   |
+| 3    | Cloaked Cargo Hold 4        | 45    | 70   |
+| 3    | Cargo Hold 5                | 50    | 75   |
+| 3    | Armored Cargo Hold 5        | 50    | 75   |
+| 3    | Cloaked Cargo Hold 5        | 50    | 75   |
+| 3    | Cargo Hold 6                | 60    | 75   |
+| 3    | Armored Cargo Hold 6        | 60    | 75   |
+| 3    | Cloaked Cargo Hold 6        | 60    | 75   |
+| 3    | Hauler Hold                 | 65    | 40   |
+| 3    | Cargo Hold 7                | 70    | 75   |
+| 3    | Cloaked Cargo Hold 7        | 70    | 75   |
+| 3    | Cargo Hold 8                | 80    | 80   |
+| 3    | Cloaked Cargo Hold 8        | 80    | 80   |
 
 
 ### Weapons
@@ -467,6 +552,8 @@ where componenttype = 4 and factionid < 10 order by type, s, componentlevel;
 
 | type | s |            name            | ops | gun | ele | mass | faction | dmg | dice | ties | thc | rng | ap | acc | prio | crit | eff | rad | void |
 |------|---|----------------------------|-----|-----|-----|------|---------|-----|------|------|-----|-----|----|-----|------|------|-----|-----|------|
+| 1    | 1 | M115 Twin Autocannon       | 3   | 12  | 0   | 100  | 0       | 105 | 70   | 1    | 90  | 1   | 1  | 14  | 1    | 10   | 45  | 0   | 0    |
+| 1    | 1 | M118A Tracker Cannon       | 3   | 12  | 0   | 100  | 0       | 105 | 70   | 1    | 90  | 1   | 1  | 14  | 1    | 10   | 45  | 0   | 0    |
 | 1    | 1 | Valiant Autocannon         | 1   | 4   | 0   | 100  | 0       | 65  | 50   | 1    | 70  | 1   | 1  | 1   | 1    | 5    | 30  | 0   | 0    |
 | 1    | 1 | M92 Barrel-Cannon          | 2   | 5   | 0   | 100  | 0       | 75  | 50   | 1    | 70  | 1   | 1  | 3   | 1    | 15   | 40  | 0   | 0    |
 | 1    | 1 | Dual-Linked Autocannon     | 2   | 6   | 0   | 100  | 0       | 85  | 50   | 1    | 72  | 1   | 1  | 6   | 1    | 20   | 30  | 0   | 0    |
@@ -474,19 +561,21 @@ where componenttype = 4 and factionid < 10 order by type, s, componentlevel;
 | 1    | 1 | Lionheart Cannon           | 3   | 10  | 0   | 100  | 0       | 90  | 50   | 1    | 75  | 1   | 1  | 10  | 1    | 15   | 40  | 0   | 0    |
 | 1    | 1 | M95 Tracer Cannon          | 3   | 12  | 0   | 100  | 0       | 90  | 60   | 1    | 90  | 1   | 1  | 11  | 1    | 20   | 45  | 0   | 0    |
 | 1    | 1 | M101 Tracker Cannon        | 3   | 11  | 0   | 100  | 0       | 95  | 65   | 1    | 75  | 1   | 1  | 12  | 1    | 15   | 40  | 0   | 0    |
+| 1    | 1 | M115 Twin Autocannon       | 3   | 11  | 0   | 100  | 0       | 105 | 70   | 1    | 90  | 1   | 1  | 14  | 1    | 10   | 45  | 0   | 0    |
 | 1    | 2 | M90 Barrel-Cannon          | 2   | 6   | 0   | 300  | 0       | 135 | 52   | 1    | 85  | 1   | 2  | 2   | 1    | 12   | 45  | 0   | 0    |
 | 1    | 2 | M94 Barrel-Cannon          | 2   | 7   | 0   | 300  | 0       | 160 | 50   | 1    | 85  | 1   | 2  | 5   | 1    | 10   | 55  | 0   | 0    |
 ||
-| 2    | 1 | Phoenix Lance              | 2   | 4   | 0   | 150  | 0       | 100 | 40   | 0    | 20  | 2   | 2  | 2   | 1    | 15   | 55  | 20  | 0    |
-| 2    | 1 | HX-Cycle Lance             | 2   | 5   | 1   | 150  | 0       | 120 | 40   | 0    | 20  | 2   | 2  | 4   | 1    | 15   | 60  | 25  | 0    |
-| 2    | 1 | HX-2 Lance                 | 2   | 7   | 1   | 150  | 0       | 140 | 40   | 0    | 20  | 2   | 2  | 6   | 1    | 10   | 55  | 35  | 0    |
-| 2    | 1 | Cloudstrike Lance          | 3   | 9   | 1   | 150  | 0       | 180 | 40   | 0    | 20  | 2   | 2  | 6   | 1    | 30   | 30  | 20  | 0    |
-| 2    | 1 | Void-Thunder Lance         | 3   | 12  | 2   | 150  | 0       | 180 | 40   | 0    | 25  | 2   | 2  | 9   | 1    | 35   | 30  | 40  | 0    |
+| 2    | 1 | Phoenix Lance              | 2   | 4   | 0   | 150  | 0       | 100 | 40   | 1    | 20  | 2   | 2  | 2   | 1    | 15   | 55  | 20  | 0    |
+| 2    | 1 | HX-Cycle Lance             | 2   | 5   | 1   | 150  | 0       | 120 | 40   | 1    | 20  | 2   | 2  | 4   | 1    | 15   | 60  | 25  | 0    |
+| 2    | 1 | HX-2 Lance                 | 2   | 7   | 1   | 150  | 0       | 140 | 40   | 1    | 20  | 2   | 2  | 6   | 1    | 10   | 55  | 35  | 0    |
+| 2    | 1 | Cloudstrike Lance          | 3   | 9   | 1   | 150  | 0       | 180 | 40   | 1    | 20  | 2   | 2  | 6   | 1    | 30   | 30  | 20  | 0    |
+| 2    | 1 | Void-Thunder Lance         | 3   | 12  | 2   | 150  | 0       | 180 | 40   | 1    | 25  | 2   | 2  | 9   | 1    | 35   | 30  | 40  | 0    |
+| 2    | 1 | Thunderstrike Quad-Arc     | 4   | 12  | 3   | 150  | 0       | 100 | 40   | 1    | 40  | 2   | 2  | 10  | 1    | 35   | 55  | 40  | 0    |
 | 2    | 2 | Starshot Lance Array       | 2   | 5   | 0   | 350  | 0       | 180 | 40   | 1    | 30  | 2   | 3  | 3   | 1    | 30   | 55  | 30  | 0    |
-| 2    | 2 | Starfall Lance Array       | 2   | 9   | 1   | 350  | 0       | 240 | 40   | 0    | 30  | 2   | 3  | 8   | 1    | 15   | 55  | 10  | 0    |
-| 2    | 2 | Thunder XK3 Lance Array    | 3   | 10  | 2   | 350  | 0       | 275 | 40   | 0    | 30  | 2   | 3  | 8   | 1    | 10   | 55  | 10  | 0    |
-| 2    | 2 | Hazuk Duo-Arc              | 4   | 13  | 3   | 350  | 6       | 280 | 40   | 0    | 15  | 2   | 3  | 10  | 1    | 10   | 60  | 45  | 0    |
-| 2    | 2 | Cerulean Tri-Arc           | 4   | 13  | 3   | 350  | 2       | 310 | 40   | 0    | 50  | 2   | 3  | 11  | 1    | 20   | 65  | 35  | 0    |
+| 2    | 2 | Starfall Lance Array       | 2   | 9   | 1   | 350  | 0       | 240 | 40   | 1    | 30  | 2   | 3  | 8   | 1    | 15   | 55  | 10  | 0    |
+| 2    | 2 | Thunder XK3 Lance Array    | 3   | 10  | 2   | 350  | 0       | 275 | 40   | 1    | 30  | 2   | 3  | 8   | 1    | 10   | 55  | 10  | 0    |
+| 2    | 2 | Hazuk Duo-Arc              | 4   | 13  | 3   | 350  | 6       | 280 | 40   | 1    | 15  | 2   | 3  | 10  | 1    | 10   | 60  | 45  | 0    |
+| 2    | 2 | Cerulean Tri-Arc           | 4   | 13  | 3   | 350  | 2       | 310 | 40   | 1    | 50  | 2   | 3  | 11  | 1    | 20   | 65  | 35  | 0    |
 ||
 | 3    | 1 | Imperator PC-1             | 1   | 4   | 0   | 100  | 0       | 116 | 20   | 0    | 10  | 3   | 2  | 1   | 2    | 15   | 40  | 22  | 0    |
 | 3    | 1 | Stalwart PC-1              | 2   | 5   | 1   | 100  | 0       | 120 | 20   | 0    | 10  | 3   | 2  | 2   | 2    | 30   | 40  | 30  | 0    |
@@ -496,17 +585,20 @@ where componenttype = 4 and factionid < 10 order by type, s, componentlevel;
 | 3    | 2 | MK Plasma Ordnance         | 2   | 9   | 1   | 300  | 0       | 150 | 20   | 0    | 5   | 3   | 3  | 5   | 2    | 25   | 40  | 110 | 0    |
 | 3    | 2 | Commander Plasma Artillery | 3   | 11  | 2   | 300  | 0       | 150 | 20   | 0    | 5   | 3   | 3  | 10  | 2    | 30   | 30  | 130 | 0    |
 | 3    | 2 | Azmath Plasma Ordnance     | 3   | 12  | 2   | 300  | 0       | 150 | 20   | 0    | 5   | 3   | 3  | 11  | 2    | 30   | 40  | 160 | 0    |
+| 3    | 2 | DSX Plasma Battery         | 3   | 12  | 2   | 300  | 0       | 150 | 20   | 0    | 15  | 3   | 3  | 12  | 2    | 35   | 45  | 175 | 0    |
 | 3    | 3 | Obliterator PK-1           | 2   | 9   | 2   | 550  | 0       | 150 | 20   | 0    | 5   | 3   | 4  | 7   | 2    | 30   | 45  | 150 | 0    |
 | 3    | 3 | Interceder PCX-1           | 2   | 9   | 2   | 550  | 0       | 50  | 30   | 0    | 5   | 3   | 4  | 8   | 2    | 35   | 50  | 200 | 0    |
 | 3    | 3 | Obliterator PK-2           | 3   | 11  | 2   | 550  | 0       | 150 | 20   | 0    | 5   | 3   | 4  | 9   | 2    | 35   | 45  | 170 | 0    |
 | 3    | 3 | Obliterator PKX-3          | 4   | 11  | 2   | 550  | 0       | 150 | 20   | 0    | 5   | 3   | 4  | 11  | 2    | 35   | 50  | 190 | 0    |
 | 3    | 3 | Interceder PCX-5           | 3   | 12  | 3   | 550  | 0       | 50  | 30   | 0    | 5   | 3   | 4  | 10  | 2    | 35   | 50  | 275 | 0    |
+| 3    | 3 | Obliterator PKX-5          | 4   | 12  | 2   | 550  | 0       | 150 | 25   | 0    | 10  | 3   | 3  | 11  | 2    | 25   | 40  | 175 | 0    |
 ||
 | 4    | 1 | Light Railgun              | 2   | 3   | 0   | 125  | 0       | 90  | 20   | 0    | 60  | 3   | 3  | 3   | 1    | 5    | 35  | 0   | 80   |
 | 4    | 1 | Lightspear Railgun         | 2   | 4   | 2   | 125  | 0       | 100 | 20   | 0    | 60  | 3   | 3  | 5   | 1    | 10   | 35  | 0   | 90   |
 | 4    | 1 | Blazelight Railgun         | 2   | 6   | 2   | 125  | 0       | 100 | 20   | 0    | 60  | 3   | 3  | 7   | 1    | 10   | 40  | 0   | 100  |
 | 4    | 1 | Radiance Railgun           | 3   | 8   | 3   | 125  | 0       | 80  | 20   | 0    | 60  | 3   | 3  | 8   | 1    | 10   | 60  | 0   | 110  |
-| 4    | 2 | Archangel Railgun          | 2   | 5   | 0   | 300  | 0       | 120 | 20   | 1    | 65  | 3   | 3  | 4   | 1    | 10   | 45  | 0   | 84   |
+| 4    | 1 | Daystar Railgun            | 3   | 9   | 3   | 125  | 0       | 60  | 100  | 0    | 55  | 3   | 3  | 14  | 1    | 30   | 45  | 0   | 110  |
+| 4    | 2 | Archangel Railgun          | 2   | 5   | 0   | 300  | 0       | 120 | 20   | 0    | 65  | 3   | 3  | 4   | 1    | 10   | 45  | 0   | 84   |
 | 4    | 2 | Helios Railgun             | 3   | 6   | 1   | 300  | 0       | 120 | 20   | 0    | 65  | 3   | 3  | 6   | 1    | 20   | 45  | 0   | 90   |
 | 4    | 2 | Helios X Railgun           | 3   | 6   | 1   | 310  | 0       | 122 | 20   | 0    | 65  | 3   | 3  | 7   | 1    | 25   | 55  | 0   | 100  |
 | 4    | 2 | Archangel Dual-R Railgun   | 3   | 6   | 1   | 300  | 0       | 125 | 20   | 0    | 65  | 3   | 3  | 10  | 1    | 20   | 45  | 0   | 110  |
@@ -515,17 +607,20 @@ where componenttype = 4 and factionid < 10 order by type, s, componentlevel;
 | 4    | 2 | Tri Helical Rail X3        | 4   | 10  | 2   | 300  | 0       | 200 | 20   | 0    | 65  | 3   | 4  | 14  | 1    | 25   | 45  | 0   | 190  |
 | 4    | 2 | Demon-X Heavy Rail         | 5   | 11  | 2   | 300  | 0       | 240 | 40   | 0    | 60  | 3   | 4  | 15  | 1    | 20   | 55  | 0   | 200  |
 | 4    | 2 | Demon-X Fast Rail          | 4   | 10  | 2   | 300  | 0       | 200 | 30   | 0    | 50  | 3   | 3  | 11  | 1    | 25   | 40  | 0   | 200  |
+| 4    | 2 | Seraphim Railgun Array     | 4   | 12  | 3   | 300  | 0       | 180 | 60   | 0    | 50  | 3   | 3  | 13  | 1    | 35   | 40  | 0   | 180  |
 ||
-| 5    | 2 | Vengence Gravcannon        | 1   | 5   | 0   | 325  | 0       | 180 | 90   | 1    | 0   | 2   | 3  | 0   | 2    | 15   | 30  | 0   | 0    |
+| 5    | 2 | Vengeance Gravcannon       | 1   | 5   | 0   | 325  | 0       | 180 | 90   | 1    | 0   | 2   | 3  | 0   | 2    | 15   | 30  | 0   | 0    |
 | 5    | 2 | Retaliation Gravcannon     | 2   | 5   | 0   | 350  | 0       | 185 | 90   | 1    | 0   | 2   | 3  | 2   | 2    | 30   | 40  | 0   | 0    |
 | 5    | 2 | JUK Gravity Array          | 2   | 6   | 0   | 350  | 0       | 200 | 90   | 1    | 0   | 2   | 3  | 2   | 2    | 35   | 40  | 0   | 0    |
 | 5    | 2 | JUK Gravcannon             | 2   | 8   | 0   | 350  | 0       | 215 | 90   | 1    | 0   | 2   | 3  | 3   | 2    | 35   | 40  | 0   | 0    |
 | 5    | 2 | JUK-22 Gravcannon          | 2   | 9   | 0   | 350  | 0       | 240 | 90   | 1    | 0   | 2   | 3  | 3   | 2    | 30   | 40  | 0   | 0    |
 | 5    | 2 | JUK-24 Gravcannon          | 3   | 10  | 0   | 350  | 0       | 250 | 90   | 1    | 0   | 2   | 3  | 4   | 2    | 30   | 40  | 0   | 0    |
+| 5    | 2 | GUR-18 Gravcannon          | 3   | 11  | 0   | 350  | 0       | 360 | 90   | 1    | 0   | 2   | 3  | 6   | 2    | 45   | 50  | 0   | 0    |
 | 5    | 3 | Ruut 82 Gravcannon         | 2   | 8   | 0   | 600  | 0       | 300 | 100  | 1    | 0   | 2   | 4  | 3   | 2    | 40   | 40  | 0   | 0    |
 | 5    | 3 | Ruut 84 Gravcannon         | 2   | 12  | 0   | 600  | 0       | 320 | 100  | 1    | 0   | 2   | 4  | 4   | 2    | 45   | 40  | 0   | 0    |
 | 5    | 3 | Retribution Gravcannon     | 3   | 13  | 0   | 600  | 0       | 350 | 100  | 1    | 0   | 2   | 4  | 5   | 2    | 45   | 40  | 0   | 0    |
 | 5    | 3 | Coronation Gravcannon      | 2   | 15  | 0   | 600  | 0       | 400 | 100  | 1    | 0   | 2   | 4  | 6   | 2    | 20   | 65  | 0   | 0    |
+| 5    | 3 | Vanguard Gravcannon        | 3   | 15  | 0   | 600  | 0       | 420 | 140  | 1    | 0   | 2   | 4  | 7   | 2    | 40   | 55  | 0   | 0    |
 ||
 | 6    | 1 | Hydra Missile Array        | 2   | 4   | 1   | 125  | 0       | 120 | 100  | 0    | 30  | 4   | 3  | 8   | 2    | 30   | 30  | 25  | 0    |
 | 6    | 1 | Arratech Missile Pod       | 2   | 6   | 1   | 125  | 0       | 125 | 100  | 0    | 30  | 4   | 3  | 10  | 2    | 30   | 25  | 30  | 0    |
@@ -535,23 +630,26 @@ where componenttype = 4 and factionid < 10 order by type, s, componentlevel;
 | 6    | 1 | Aramech X2 Missile Battery | 2   | 12  | 1   | 125  | 0       | 130 | 100  | 0    | 30  | 4   | 3  | 17  | 2    | 35   | 30  | 50  | 0    |
 | 6    | 1 | Valkri Missile Pods        | 2   | 13  | 2   | 125  | 0       | 130 | 100  | 0    | 30  | 4   | 3  | 18  | 2    | 30   | 30  | 90  | 0    |
 | 6    | 1 | Gargoyle Missile Battery   | 2   | 12  | 1   | 125  | 0       | 150 | 100  | 0    | 35  | 4   | 3  | 17  | 2    | 15   | 40  | 50  | 0    |
+| 6    | 1 | Dragoon Missile Launcher   | 2   | 11  | 1   | 125  | 0       | 175 | 120  | 0    | 30  | 4   | 3  | 19  | 2    | 30   | 50  | 80  | 0    |
 | 6    | 2 | Ares Missile System        | 1   | 4   | 1   | 300  | 0       | 110 | 100  | 0    | 40  | 4   | 3  | 6   | 2    | 30   | 25  | 20  | 0    |
 | 6    | 2 | Vector Missile System      | 3   | 7   | 1   | 300  | 0       | 140 | 100  | 0    | 40  | 4   | 3  | 8   | 2    | 30   | 15  | 30  | 0    |
 | 6    | 2 | Dual-Linked Vector Missile | 3   | 10  | 1   | 300  | 0       | 160 | 100  | 0    | 40  | 4   | 3  | 10  | 2    | 30   | 20  | 60  | 0    |
 | 6    | 2 | Goliath Missile Battery    | 3   | 12  | 2   | 300  | 0       | 170 | 100  | 0    | 40  | 4   | 3  | 14  | 2    | 40   | 25  | 80  | 0    |
+| 6    | 2 | Chimera Missile Battery    | 3   | 12  | 3   | 300  | 0       | 160 | 100  | 0    | 30  | 4   | 3  | 19  | 2    | 35   | 50  | 60  | 0    |
 ||
 | 7    | 1 | Hellfire Torpedo           | 2   | 4   | 0   | 110  | 0       | 20  | 40   | 0    | 20  | 5   | 2  | 4   | 1    | 2    | 45  | 0   | 30   |
 | 7    | 1 | Firestorm Torpedo          | 2   | 6   | 1   | 110  | 0       | 30  | 40   | 0    | 20  | 5   | 2  | 8   | 1    | 3    | 50  | 0   | 40   |
 | 7    | 1 | Inferno Torpedo            | 2   | 11  | 2   | 110  | 0       | 35  | 40   | 0    | 20  | 5   | 2  | 10  | 1    | 8    | 50  | 0   | 45   |
 | 7    | 1 | Torpedo Dual-Laced Array   | 3   | 13  | 3   | 110  | 0       | 35  | 55   | 0    | 20  | 5   | 2  | 14  | 1    | 8    | 50  | 0   | 45   |
 | 7    | 1 | Firewave Torpedo           | 2   | 15  | 4   | 110  | 0       | 40  | 60   | 0    | 25  | 5   | 2  | 16  | 1    | 10   | 60  | 0   | 70   |
+| 7    | 1 | Flamebreak Torpedo         | 2   | 15  | 3   | 110  | 0       | 50  | 60   | 0    | 25  | 5   | 2  | 18  | 1    | 15   | 60  | 0   | 80   |
 | 7    | 2 | Torpedo Mk-Alpha           | 1   | 5   | 1   | 325  | 0       | 30  | 40   | 0    | 10  | 5   | 2  | 5   | 1    | 2    | 45  | 0   | 40   |
 | 7    | 2 | Void-Lance Torpedo         | 3   | 7   | 3   | 325  | 0       | 30  | 70   | 0    | 10  | 5   | 3  | 11  | 1    | 5    | 65  | 0   | 80   |
 | 7    | 2 | Torpedo MK2-Alpha          | 3   | 13  | 3   | 325  | 0       | 40  | 50   | 0    | 10  | 5   | 3  | 14  | 1    | 10   | 60  | 0   | 90   |
+| 7    | 2 | Torpedo Mk3-Gamma          | 3   | 13  | 3   | 325  | 0       | 50  | 60   | 0    | 15  | 5   | 2  | 16  | 1    | 10   | 60  | 0   | 90   |
+| 7    | 2 | Torpedo Mk3-Delta          | 3   | 14  | 3   | 325  | 0       | 60  | 75   | 0    | 20  | 5   | 2  | 18  | 1    | 12   | 60  | 0   | 100  |
+| 7    | 2 | Torpedo Mk4-Ultra          | 3   | 14  | 3   | 325  | 0       | 65  | 80   | 0    | 15  | 5   | 2  | 20  | 1    | 15   | 60  | 0   | 100  |
 | 7    | 3 | Cadonya Buster Array       | 6   | 16  | 6   | 600  | 2       | 100 | 60   | 0    | 50  | 5   | 4  | 16  | 1    | 12   | 65  | 0   | 80   |
-
-
-### TODO
 
 
 ### Mass Redux
@@ -581,12 +679,29 @@ select componentsize as size, componentname as name, skPilot as pil, skShipOps a
 | 2    | Adv. Mass Dampener 2 | 0   | 3   | 0    | 1   | 0       | 7   | -330 | 47    |
 | 2    | Adv. Mass Dampener 3 | 0   | 4   | 0    | 2   | 0       | 8   | -360 | 45    |
 | 2    | Adv. Mass Dampener 4 | 0   | 5   | 0    | 3   | 0       | 9   | -400 | 44    |
-| 2    | Adv. Mass Dampener 5 | 0   | 5   | 0    | 3   | 0       | 12  | -460 | 38    |
+| 2    | Adv. Mass Dampener 5 | 0   | 6   | 0    | 4   | 1       | 12  | -460 | 38    |
+| 2    | Adv. Mass Dampener 5 | 0   | 6   | 0    | 4   | 2       | 12  | -460 | 38    |
+| 2    | Adv. Mass Dampener 5 | 0   | 6   | 0    | 4   | 3       | 12  | -460 | 38    |
+| 2    | Adv. Mass Dampener 5 | 0   | 6   | 0    | 4   | 4       | 12  | -460 | 38    |
+| 2    | Adv. Mass Dampener 5 | 0   | 6   | 0    | 4   | 5       | 12  | -460 | 38    |
+| 2    | Adv. Mass Dampener 5 | 0   | 6   | 0    | 4   | 6       | 12  | -460 | 38    |
+| 2    | Adv. Mass Dampener 5 | 0   | 6   | 0    | 4   | 7       | 12  | -460 | 38    |
+| 2    | Adv. Mass Dampener 5 | 0   | 6   | 0    | 4   | 8       | 12  | -460 | 38    |
+| 2    | Adv. Mass Dampener 5 | 0   | 6   | 0    | 4   | 9       | 12  | -460 | 38    |
+| 2    | Adv. Mass Dampener 6 | 0   | 6   | 0    | 5   | 1       | 13  | -540 | 41    |
+| 2    | Adv. Mass Dampener 6 | 0   | 6   | 0    | 5   | 2       | 13  | -540 | 41    |
+| 2    | Adv. Mass Dampener 6 | 0   | 6   | 0    | 5   | 3       | 13  | -540 | 41    |
+| 2    | Adv. Mass Dampener 6 | 0   | 6   | 0    | 5   | 4       | 13  | -540 | 41    |
+| 2    | Adv. Mass Dampener 6 | 0   | 6   | 0    | 5   | 5       | 13  | -540 | 41    |
+| 2    | Adv. Mass Dampener 6 | 0   | 6   | 0    | 5   | 6       | 13  | -540 | 41    |
+| 2    | Adv. Mass Dampener 6 | 0   | 6   | 0    | 5   | 7       | 13  | -540 | 41    |
+| 2    | Adv. Mass Dampener 6 | 0   | 6   | 0    | 5   | 8       | 13  | -540 | 41    |
+| 2    | Adv. Mass Dampener 6 | 0   | 6   | 0    | 5   | 9       | 13  | -540 | 41    |
 
 
 ## Ships
 
-Starting Ships:
+Starting Ships (priority added manually):
 
 ```sqlite3
 select shiptypename, unlockid > 0 as lock from shiptype where startingship = 1 order by basemass;
@@ -640,8 +755,9 @@ select basemass as mass, unlockid > 0 as lock, shiptypename as name, hullpoints 
 | 3400 | 0    | Callus Freighter          | 1500 | 5   | 12   | 50   | 5   | 30   | 11 | 4  | 3 | 0     | 0 |
 | 3400 | 1    | Victus Interceptor        | 1100 | 12  | 10   | 64   | 5   | 30   | 11 | 4  | 3 | 1     | 0 |
 | 3400 | 0    | Sword Cutter              | 1900 | 7   | 8    | 70   | 5   | 30   | 11 | 6  | 2 | 1     | 2 |
-| 3400 | 0    | Wolf Vector               | 1700 | 10  | 6    | 100  | 5   | 30   | 11 | 6  | 2 | 1     | 0 |
 | 3400 | 0    | Rim Exocruiser            | 1100 | 12  | 10   | 105  | 5   | 30   | 11 | 5  | 2 | 1     | 5 |
+| 3400 | 0    | Wolf Vector               | 1700 | 10  | 6    | 100  | 6   | 30   | 11 | 6  | 2 | 1     | 0 |
+| 3400 | 0    | Wolfpack Interceptor      | 1700 | 10  | 6    | 100  | 6   | 30   | 11 | 6  | 2 | 1     | 0 |
 ||
 | 5000 | 0    | Paladin Cruiser           | 1500 | 8   | 7    | 40   | 5   | 30   | 10 | 5  | 4 | 0     | 0 |
 | 5000 | 0    | Frontier Liner            | 1400 | 7   | 8    | 55   | 5   | 30   | 10 | 5  | 3 | 0     | 0 |
@@ -659,6 +775,7 @@ select basemass as mass, unlockid > 0 as lock, shiptypename as name, hullpoints 
 | 5000 | 0    | Reach Cruiser             | 1650 | 12  | 8    | 75   | 5   | 30   | 11 | 6  | 4 | 0     | 8 |
 | 5000 | 0    | Reach Defender            | 1750 | 11  | 10   | 45   | 5   | 30   | 10 | 7  | 4 | 0     | 2 |
 | 5000 | 0    | Arcanum Freighter         | 1600 | 9   | 8    | 50   | 5   | 30   | 12 | 5  | 4 | 0     | 9 |
+| 5000 | 0    | Paladin Crusader          | 1500 | 12  | 6    | 30   | 6   | 30   | 10 | 6  | 4 | 0     | 0 |
 ||
 | 6000 | 0    | Fidelis Cutter            | 2000 | 7   | 8    | 60   | 5   | 30   | 12 | 7  | 4 | 0     | 0 |
 | 6000 | 0    | Guardian Interceptor      | 1950 | 6   | 6    | 60   | 5   | 30   | 12 | 7  | 4 | 0     | 0 |
@@ -670,11 +787,12 @@ select basemass as mass, unlockid > 0 as lock, shiptypename as name, hullpoints 
 | 6000 | 0    | Azure Defender            | 1850 | 4   | 9    | 130  | 7   | 36   | 12 | 7  | 4 | 0     | 7 |
 | 6000 | 0    | Lockwood Defender         | 2005 | 10  | 10   | 55   | 7   | 36   | 10 | 8  | 5 | 0     | 3 |
 | 6000 | 1    | Horizon  Cruiser          | 2250 | 5   | 10   | 60   | 7   | 36   | 9  | 9  | 5 | 0     | 0 |
-| 6000 | 0    | Neutiquam Cruiser         | 2050 | 10  | 10   | 150  | 7   | 36   | 12 | 9  | 5 | 0     | 6 |
+| 6000 | 1    | Neutiquam Cruiser         | 2050 | 10  | 10   | 150  | 7   | 36   | 12 | 9  | 5 | 0     | 6 |
 | 6000 | 0    | Fallen Carrier            | 1850 | 4   | 7    | 130  | 7   | 36   | 8  | 9  | 5 | 0     | 0 |
 | 6000 | 0    | Extremis Carrier          | 2005 | 5   | 8    | 80   | 7   | 36   | 7  | 10 | 5 | 0     | 0 |
 | 6000 | 0    | Vark Carrier              | 2500 | 9   | 10   | 90   | 7   | 36   | 8  | 10 | 5 | 0     | 9 |
-| 6000 | 1    | Shizari Huntress          | 2050 | 7   | 8    | 100  | 7   | 36   | 14 | 7  | 4 | 1     | 0 |
+| 6000 | 1    | Shizari Huntress          | 2050 | 7   | 8    | 100  | 7   | 36   | 14 | 7  | 4 | 0     | 0 |
+| 6000 | 0    | Voracious Class           | 1675 | 10  | 8    | 95   | 7   | 36   | 12 | 8  | 4 | 0     | 0 |
 ||
 | 7000 | 0    | Cautela Heavylift         | 2500 | 5   | 4    | 80   | 6   | 36   | 12 | 8  | 4 | 0     | 0 |
 | 7000 | 0    | Dragoon Cruiser           | 2350 | 6   | 5    | 100  | 6   | 36   | 12 | 8  | 4 | 0     | 0 |
@@ -682,19 +800,24 @@ select basemass as mass, unlockid > 0 as lock, shiptypename as name, hullpoints 
 | 7000 | 1    | Degla Megalift            | 1900 | 7   | 9    | 75   | 7   | 36   | 12 | 9  | 5 | 0     | 0 |
 | 7000 | 1    | Azurite Cruiser           | 1850 | 9   | 3    | 130  | 7   | 36   | 11 | 10 | 4 | 0     | 2 |
 | 7000 | 0    | Basalt Carrier            | 1850 | 4   | 7    | 130  | 7   | 36   | 12 | 8  | 6 | 0     | 0 |
+| 7000 | 0    | Vengeance Class Mk3       | 2450 | 8   | 6    | 45   | 7   | 36   | 14 | 6  | 7 | 0     | 0 |
 | 7000 | 0    | Leo Battlecruiser         | 2000 | 8   | 7    | 95   | 7   | 42   | 12 | 9  | 6 | 0     | 4 |
 | 7000 | 1    | Obsidian Carrier          | 2650 | 2   | 10   | 80   | 7   | 42   | 11 | 8  | 6 | 0     | 0 |
 | 7000 | 1    | Larimar Battlecruiser     | 2250 | 4   | 11   | 100  | 7   | 42   | 10 | 10 | 5 | 0     | 2 |
+| 7000 | 0    | Raptor Strikecarrier      | 2250 | 7   | 9    | 115  | 7   | 42   | 10 | 7  | 8 | 0     | 6 |
 ||
 | 8000 | 0    | Aegis Freighter           | 2200 | 9   | 7    | 50   | 7   | 36   | 8  | 13 | 7 | 0     | 7 |
 | 8000 | 1    | Pallas Freighter          | 2050 | 7   | 11   | 95   | 7   | 36   | 9  | 11 | 8 | 0     | 0 |
 | 8000 | 0    | Tempus Freighter          | 2900 | 6   | 10   | 150  | 7   | 36   | 9  | 11 | 8 | 0     | 1 |
 | 8000 | 0    | Broadsword Class          | 2600 | 5   | 3    | 60   | 7   | 42   | 13 | 9  | 7 | 0     | 0 |
 | 8000 | 0    | Warhammer Class           | 2500 | 3   | 9    | 35   | 7   | 42   | 12 | 11 | 7 | 0     | 0 |
-| 8000 | 0    | Mortifor Carrier          | 2350 | 10  | 6    | 60   | 7   | 42   | 15 | 8  | 6 | 0     | 5 |
+| 8000 | 0    | Mortifor Carrier          | 2350 | 10  | 6    | 60   | 7   | 42   | 15 | 7  | 7 | 0     | 5 |
 | 8000 | 0    | Harbinger Carrier         | 2100 | 7   | 11   | 95   | 7   | 42   | 12 | 10 | 6 | 0     | 8 |
 | 8000 | 1    | Skylift Carrier           | 1850 | 8   | 10   | 135  | 7   | 42   | 14 | 8  | 6 | 0     | 4 |
 ||
 | 9000 | 0    | Sword Battlecruiser       | 2100 | 9   | 7    | 115  | 7   | 42   | 14 | 12 | 6 | 0     | 0 |
 | 9000 | 0    | Cautela Titan             | 2700 | 7   | 4    | 160  | 7   | 42   | 12 | 13 | 6 | 0     | 0 |
-| 9000 | 0    | Dreadnought Battlecarrier | 2500 | 8   | 8    | 135  | 7   | 42   | 12 | 12 | 8 | 0     | 1 |
+| 9000 | 0    | Dreadnought Battlecarrier | 2500 | 8   | 8    | 135  | 7   | 42   | 13 | 11 | 8 | 0     | 1 |
+| 9000 | 0    | Acheron Battlecarrier     | 2350 | 5   | 3    | 145  | 7   | 42   | 15 | 8  | 8 | 0     | 0 |
+| 9000 | 0    | Alistar Huntress          | 2550 | 11  | 6    | 160  | 7   | 42   | 16 | 9  | 7 | 0     | 7 |
+| 9000 | 0    | Degla Heavylift           | 2450 | 14  | 4    | 200  | 7   | 42   | 12 | 11 | 7 | 0     | 1 |
