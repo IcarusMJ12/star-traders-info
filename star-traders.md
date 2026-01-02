@@ -418,8 +418,8 @@ from shipcomponent where componenttype = 2 and factionid < 10 order by s, cargo,
 select componentsize as size, componentname as name, holdscargo as cargo, fuelbonus as fuel from shipcomponent where factionid < 10 and (holdscargo > 0 or fuelbonus > 0) order by componentsize, holdscargo, fuelbonus;
 ```
 
-| size |            name            | cargo | fuel |
-|------|----------------------------|-------|------|
+| size |            name             | cargo | fuel |
+|------|-----------------------------|-------|------|
 | 1    | Reactor Spike Module 1      | 0     | 5    |
 | 1    | Reactor Spike Module 2      | 0     | 15   |
 | 1    | Small Fuel Tank 1           | 0     | 20   |
@@ -652,7 +652,7 @@ where componenttype = 4 and factionid < 10 order by type, s, componentlevel;
 | 7    | 3 | Cadonya Buster Array       | 6   | 16  | 6   | 600  | 2       | 100 | 60   | 0    | 50  | 5   | 4  | 16  | 1    | 12   | 65  | 0   | 80   |
 
 
-### Mass Redux
+### Mass Reduction
 
 ```sqlite3
 select componentsize as size, componentname as name, skPilot as pil, skShipOps as ops, skElectronics as elec, skNavigation as nav, factionid as faction, jumpcost as jmp, mass, abs(mass)/jumpcost as value from shipcomponent where componenttype = 27 and factionid < 10 order by size, mass desc;
@@ -728,96 +728,100 @@ select shiptypename, unlockid > 0 as lock from shiptype where startingship = 1 o
 
 
 ```sqlite3
-select basemass as mass, unlockid > 0 as lock, shiptypename as name, hullpoints as hull, basearmor as arm, basedeflection as shld, basefuel as fuel, maxofficer as off, maxlifesupport as crew, smallslots as s, mediumslots as m, largeslots as l, _id in (select shipId from shipdatacompartment where componenttype = 1 and size = 1) as scout, factionid as f from shiptype where startingship > 0 order by mass, off, crew;
+select
+    basemass as mass, unlockid > 0 as lock, shiptypename as name, hullpoints as hull, basearmor as arm, basedeflection as shld, basefuel as fuel,
+    maxofficer as off, maxlifesupport as crew, maxcraft as craft, maxcraftdefense as evade, smallslots as s, mediumslots as m, largeslots as l,
+    (select size from shipdatacompartment where componenttype = 1 and shipid = shiptype._id) as bridge, factionid as f
+from shiptype where startingship > 0 order by mass, off, crew, shipcost;
 ```
 
-| mass | lock |           name            | hull | arm | shld | fuel | off | crew | s  | m  | l | scout | f |
-|------|------|---------------------------|------|-----|------|------|-----|------|----|----|---|-------|---|
-| 2400 | 0    | Scout Cutter              | 900  | 12  | 12   | 60   | 4   | 24   | 11 | 3  | 2 | 0     | 0 |
-| 2400 | 0    | Allistar Liner            | 1000 | 10  | 14   | 95   | 4   | 24   | 10 | 3  | 2 | 1     | 0 |
-| 2400 | 1    | Reach Vindex              | 1000 | 10  | 14   | 95   | 4   | 24   | 11 | 3  | 2 | 1     | 0 |
-| 2400 | 0    | Volk Frigate              | 1350 | 6   | 12   | 45   | 5   | 24   | 11 | 3  | 2 | 1     | 0 |
-| 2400 | 1    | Aeternum Vindex           | 1000 | 14  | 10   | 70   | 5   | 24   | 10 | 4  | 2 | 1     | 0 |
-| 2400 | 0    | Zartar Fang               | 1250 | 8   | 8    | 50   | 5   | 24   | 9  | 6  | 2 | 1     | 6 |
-| 2400 | 0    | Gunhawk Sabre             | 1100 | 12  | 12   | 60   | 6   | 18   | 10 | 7  | 1 | 1     | 3 |
-| 2400 | 0    | Caliga Vindex             | 1275 | 14  | 10   | 95   | 6   | 24   | 14 | 3  | 2 | 1     | 6 |
+| mass | lock |           name            | hull | arm | shld | fuel | off | crew | craft | evade | s  | m  | l | bridge | f |
+|------|------|---------------------------|------|-----|------|------|-----|------|-------|-------|----|----|---|--------|---|
+| 2400 | 0    | Scout Cutter              | 900  | 12  | 12   | 60   | 4   | 24   | 0     | 96    | 11 | 3  | 2 | 2      | 0 |
+| 2400 | 0    | Allistar Liner            | 1000 | 10  | 14   | 95   | 4   | 24   | 0     | 96    | 10 | 3  | 2 | 1      | 0 |
+| 2400 | 1    | Reach Vindex              | 1000 | 10  | 14   | 95   | 4   | 24   | 0     | 96    | 11 | 3  | 2 | 1      | 0 |
+| 2400 | 0    | Volk Frigate              | 1350 | 6   | 12   | 45   | 5   | 24   | 0     | 96    | 11 | 3  | 2 | 1      | 0 |
+| 2400 | 1    | Aeternum Vindex           | 1000 | 14  | 10   | 70   | 5   | 24   | 0     | 96    | 10 | 4  | 2 | 1      | 0 |
+| 2400 | 0    | Zartar Fang               | 1250 | 8   | 8    | 50   | 5   | 24   | 0     | 100   | 9  | 6  | 2 | 1      | 6 |
+| 2400 | 0    | Gunhawk Sabre             | 1100 | 12  | 12   | 60   | 6   | 18   | 1     | 100   | 10 | 7  | 1 | 1      | 3 |
+| 2400 | 0    | Caliga Vindex             | 1275 | 14  | 10   | 95   | 6   | 24   | 1     | 99    | 14 | 3  | 2 | 1      | 6 |
 ||
-| 3400 | 0    | Juror Class               | 1100 | 10  | 10   | 55   | 4   | 24   | 9  | 4  | 2 | 0     | 0 |
-| 3400 | 0    | Lightbow Raptor           | 1200 | 12  | 10   | 25   | 4   | 24   | 9  | 5  | 2 | 0     | 0 |
-| 3400 | 0    | Strikecruiser             | 1250 | 12  | 10   | 75   | 4   | 24   | 10 | 4  | 3 | 0     | 0 |
-| 3400 | 0    | Vulture Liner             | 1000 | 8   | 12   | 85   | 4   | 24   | 10 | 4  | 2 | 1     | 0 |
-| 3400 | 1    | Longbolt                  | 1000 | 8   | 12   | 60   | 4   | 24   | 11 | 4  | 2 | 0     | 0 |
-| 3400 | 0    | Bolt Raptor               | 1050 | 11  | 12   | 80   | 5   | 24   | 12 | 4  | 2 | 1     | 0 |
-| 3400 | 0    | Dart Liner                | 950  | 10  | 15   | 45   | 5   | 24   | 12 | 3  | 2 | 1     | 0 |
-| 3400 | 1    | Palace Interceptor        | 1200 | 11  | 11   | 70   | 5   | 24   | 8  | 6  | 2 | 1     | 0 |
-| 3400 | 0    | Corsair Interceptor       | 1250 | 10  | 10   | 55   | 5   | 24   | 13 | 3  | 2 | 1     | 1 |
-| 3400 | 0    | Dart Jammer               | 1000 | 15  | 8    | 45   | 5   | 30   | 11 | 4  | 2 | 0     | 0 |
-| 3400 | 0    | Callus Freighter          | 1500 | 5   | 12   | 50   | 5   | 30   | 11 | 4  | 3 | 0     | 0 |
-| 3400 | 1    | Victus Interceptor        | 1100 | 12  | 10   | 64   | 5   | 30   | 11 | 4  | 3 | 1     | 0 |
-| 3400 | 0    | Sword Cutter              | 1900 | 7   | 8    | 70   | 5   | 30   | 11 | 6  | 2 | 1     | 2 |
-| 3400 | 0    | Rim Exocruiser            | 1100 | 12  | 10   | 105  | 5   | 30   | 11 | 5  | 2 | 1     | 5 |
-| 3400 | 0    | Wolf Vector               | 1700 | 10  | 6    | 100  | 6   | 30   | 11 | 6  | 2 | 1     | 0 |
-| 3400 | 0    | Wolfpack Interceptor      | 1700 | 10  | 6    | 100  | 6   | 30   | 11 | 6  | 2 | 1     | 0 |
+| 3400 | 0    | Juror Class               | 1100 | 10  | 10   | 55   | 4   | 24   | 1     | 85    | 9  | 4  | 2 | 2      | 0 |
+| 3400 | 0    | Lightbow Raptor           | 1200 | 12  | 10   | 25   | 4   | 24   | 1     | 85    | 9  | 5  | 2 | 2      | 0 |
+| 3400 | 0    | Vulture Liner             | 1000 | 8   | 12   | 85   | 4   | 24   | 1     | 88    | 10 | 4  | 2 | 1      | 0 |
+| 3400 | 1    | Longbolt                  | 1000 | 8   | 12   | 60   | 4   | 24   | 1     | 78    | 11 | 4  | 2 | 2      | 0 |
+| 3400 | 0    | Strikecruiser             | 1250 | 12  | 10   | 75   | 4   | 24   | 1     | 90    | 10 | 4  | 3 | 2      | 0 |
+| 3400 | 0    | Dart Liner                | 950  | 10  | 15   | 45   | 5   | 24   | 1     | 88    | 12 | 3  | 2 | 1      | 0 |
+| 3400 | 0    | Corsair Interceptor       | 1250 | 10  | 10   | 55   | 5   | 24   | 1     | 98    | 13 | 3  | 2 | 1      | 1 |
+| 3400 | 1    | Palace Interceptor        | 1200 | 11  | 11   | 70   | 5   | 24   | 1     | 90    | 8  | 6  | 2 | 1      | 0 |
+| 3400 | 0    | Bolt Raptor               | 1050 | 11  | 12   | 80   | 5   | 24   | 1     | 92    | 12 | 4  | 2 | 1      | 0 |
+| 3400 | 0    | Dart Jammer               | 1000 | 15  | 8    | 45   | 5   | 30   | 1     | 85    | 11 | 4  | 2 | 2      | 0 |
+| 3400 | 0    | Callus Freighter          | 1500 | 5   | 12   | 50   | 5   | 30   | 1     | 90    | 11 | 4  | 3 | 2      | 0 |
+| 3400 | 0    | Sword Cutter              | 1900 | 7   | 8    | 70   | 5   | 30   | 1     | 98    | 11 | 6  | 2 | 1      | 2 |
+| 3400 | 1    | Victus Interceptor        | 1100 | 12  | 10   | 64   | 5   | 30   | 2     | 92    | 11 | 4  | 3 | 1      | 0 |
+| 3400 | 0    | Rim Exocruiser            | 1100 | 12  | 10   | 105  | 5   | 30   | 2     | 88    | 11 | 5  | 2 | 1      | 5 |
+| 3400 | 0    | Wolfpack Interceptor      | 1700 | 10  | 6    | 100  | 6   | 30   | 1     | 75    | 11 | 6  | 2 | 1      | 0 |
+| 3400 | 0    | Wolf Vector               | 1700 | 10  | 6    | 100  | 6   | 30   | 1     | 85    | 11 | 6  | 2 | 1      | 0 |
 ||
-| 5000 | 0    | Paladin Cruiser           | 1500 | 8   | 7    | 40   | 5   | 30   | 10 | 5  | 4 | 0     | 0 |
-| 5000 | 0    | Frontier Liner            | 1400 | 7   | 8    | 55   | 5   | 30   | 10 | 5  | 3 | 0     | 0 |
-| 5000 | 1    | Galtak Freighter          | 1600 | 8   | 5    | 30   | 5   | 30   | 12 | 3  | 4 | 0     | 0 |
-| 5000 | 0    | Longbow Cruiser           | 1500 | 9   | 8    | 25   | 5   | 30   | 11 | 6  | 4 | 0     | 0 |
-| 5000 | 0    | Solar Predator            | 1950 | 7   | 9    | 80   | 5   | 30   | 11 | 5  | 4 | 0     | 0 |
-| 5000 | 0    | Hammerhead Jammer         | 2000 | 8   | 5    | 50   | 5   | 30   | 10 | 5  | 4 | 0     | 0 |
-| 5000 | 0    | Paladin Defender          | 1500 | 12  | 6    | 30   | 5   | 30   | 10 | 5  | 4 | 0     | 0 |
-| 5000 | 0    | Vrax Hauler               | 1000 | 12  | 9    | 100  | 5   | 30   | 10 | 7  | 4 | 0     | 0 |
-| 5000 | 0    | Paladin Cutter            | 1600 | 7   | 11   | 40   | 5   | 30   | 12 | 5  | 4 | 0     | 0 |
-| 5000 | 0    | Galtak Heavylift          | 1500 | 7   | 7    | 50   | 5   | 30   | 11 | 5  | 5 | 0     | 0 |
-| 5000 | 0    | Royale Gladius            | 1100 | 10  | 10   | 55   | 5   | 30   | 12 | 5  | 4 | 0     | 4 |
-| 5000 | 0    | Strikecarrier             | 1350 | 8   | 12   | 60   | 5   | 30   | 12 | 5  | 4 | 0     | 0 |
-| 5000 | 0    | Reach Carrier             | 1500 | 10  | 10   | 55   | 5   | 30   | 10 | 7  | 4 | 0     | 0 |
-| 5000 | 0    | Reach Cruiser             | 1650 | 12  | 8    | 75   | 5   | 30   | 11 | 6  | 4 | 0     | 8 |
-| 5000 | 0    | Reach Defender            | 1750 | 11  | 10   | 45   | 5   | 30   | 10 | 7  | 4 | 0     | 2 |
-| 5000 | 0    | Arcanum Freighter         | 1600 | 9   | 8    | 50   | 5   | 30   | 12 | 5  | 4 | 0     | 9 |
-| 5000 | 0    | Paladin Crusader          | 1500 | 12  | 6    | 30   | 6   | 30   | 10 | 6  | 4 | 0     | 0 |
+| 5000 | 0    | Frontier Liner            | 1400 | 7   | 8    | 55   | 5   | 30   | 2     | 72    | 10 | 5  | 3 | 2      | 0 |
+| 5000 | 1    | Galtak Freighter          | 1600 | 8   | 5    | 30   | 5   | 30   | 2     | 72    | 12 | 3  | 4 | 2      | 0 |
+| 5000 | 0    | Paladin Defender          | 1500 | 12  | 6    | 30   | 5   | 30   | 2     | 78    | 10 | 5  | 4 | 2      | 0 |
+| 5000 | 0    | Paladin Cruiser           | 1500 | 8   | 7    | 40   | 5   | 30   | 2     | 78    | 10 | 5  | 4 | 2      | 0 |
+| 5000 | 0    | Hammerhead Jammer         | 2000 | 8   | 5    | 50   | 5   | 30   | 2     | 80    | 10 | 5  | 4 | 2      | 0 |
+| 5000 | 0    | Solar Predator            | 1950 | 7   | 9    | 80   | 5   | 30   | 2     | 80    | 11 | 5  | 4 | 2      | 0 |
+| 5000 | 0    | Paladin Cutter            | 1600 | 7   | 11   | 40   | 5   | 30   | 2     | 80    | 12 | 5  | 4 | 2      | 0 |
+| 5000 | 0    | Royale Gladius            | 1100 | 10  | 10   | 55   | 5   | 30   | 2     | 88    | 12 | 5  | 4 | 2      | 4 |
+| 5000 | 0    | Vrax Hauler               | 1000 | 12  | 9    | 100  | 5   | 30   | 2     | 75    | 10 | 7  | 4 | 2      | 0 |
+| 5000 | 0    | Longbow Cruiser           | 1500 | 9   | 8    | 25   | 5   | 30   | 2     | 85    | 11 | 6  | 4 | 2      | 0 |
+| 5000 | 0    | Galtak Heavylift          | 1500 | 7   | 7    | 50   | 5   | 30   | 2     | 78    | 11 | 5  | 5 | 2      | 0 |
+| 5000 | 0    | Strikecarrier             | 1350 | 8   | 12   | 60   | 5   | 30   | 3     | 82    | 12 | 5  | 4 | 2      | 0 |
+| 5000 | 0    | Reach Cruiser             | 1650 | 12  | 8    | 75   | 5   | 30   | 2     | 88    | 11 | 6  | 4 | 2      | 8 |
+| 5000 | 0    | Arcanum Freighter         | 1600 | 9   | 8    | 50   | 5   | 30   | 2     | 85    | 12 | 5  | 4 | 2      | 9 |
+| 5000 | 0    | Reach Defender            | 1750 | 11  | 10   | 45   | 5   | 30   | 2     | 88    | 10 | 7  | 4 | 2      | 2 |
+| 5000 | 0    | Reach Carrier             | 1500 | 10  | 10   | 55   | 5   | 30   | 2     | 85    | 10 | 7  | 4 | 2      | 0 |
+| 5000 | 0    | Paladin Crusader          | 1500 | 12  | 6    | 30   | 6   | 30   | 1     | 76    | 10 | 6  | 4 | 2      | 0 |
 ||
-| 6000 | 0    | Fidelis Cutter            | 2000 | 7   | 8    | 60   | 5   | 30   | 12 | 7  | 4 | 0     | 0 |
-| 6000 | 0    | Guardian Interceptor      | 1950 | 6   | 6    | 60   | 5   | 30   | 12 | 7  | 4 | 0     | 0 |
-| 6000 | 0    | Stellar Falcon            | 2050 | 5   | 9    | 75   | 5   | 30   | 13 | 6  | 4 | 0     | 0 |
-| 6000 | 1    | Horizon Highliner         | 2495 | 4   | 9    | 40   | 6   | 30   | 10 | 8  | 5 | 0     | 0 |
-| 6000 | 0    | Raptor Class              | 1600 | 2   | 10   | 80   | 6   | 36   | 11 | 8  | 4 | 0     | 0 |
-| 6000 | 0    | Vengeance Class           | 2350 | 8   | 3    | 45   | 6   | 36   | 13 | 6  | 5 | 0     | 0 |
-| 6000 | 0    | Crimson Defender          | 1900 | 9   | 5    | 65   | 6   | 36   | 12 | 7  | 4 | 0     | 3 |
-| 6000 | 0    | Azure Defender            | 1850 | 4   | 9    | 130  | 7   | 36   | 12 | 7  | 4 | 0     | 7 |
-| 6000 | 0    | Lockwood Defender         | 2005 | 10  | 10   | 55   | 7   | 36   | 10 | 8  | 5 | 0     | 3 |
-| 6000 | 1    | Horizon  Cruiser          | 2250 | 5   | 10   | 60   | 7   | 36   | 9  | 9  | 5 | 0     | 0 |
-| 6000 | 1    | Neutiquam Cruiser         | 2050 | 10  | 10   | 150  | 7   | 36   | 12 | 9  | 5 | 0     | 6 |
-| 6000 | 0    | Fallen Carrier            | 1850 | 4   | 7    | 130  | 7   | 36   | 8  | 9  | 5 | 0     | 0 |
-| 6000 | 0    | Extremis Carrier          | 2005 | 5   | 8    | 80   | 7   | 36   | 7  | 10 | 5 | 0     | 0 |
-| 6000 | 0    | Vark Carrier              | 2500 | 9   | 10   | 90   | 7   | 36   | 8  | 10 | 5 | 0     | 9 |
-| 6000 | 1    | Shizari Huntress          | 2050 | 7   | 8    | 100  | 7   | 36   | 14 | 7  | 4 | 0     | 0 |
-| 6000 | 0    | Voracious Class           | 1675 | 10  | 8    | 95   | 7   | 36   | 12 | 8  | 4 | 0     | 0 |
+| 6000 | 0    | Fidelis Cutter            | 2000 | 7   | 8    | 60   | 5   | 30   | 3     | 72    | 12 | 7  | 4 | 3      | 0 |
+| 6000 | 0    | Guardian Interceptor      | 1950 | 6   | 6    | 60   | 5   | 30   | 3     | 72    | 12 | 7  | 4 | 3      | 0 |
+| 6000 | 0    | Stellar Falcon            | 2050 | 5   | 9    | 75   | 5   | 30   | 3     | 85    | 13 | 6  | 4 | 3      | 0 |
+| 6000 | 1    | Horizon Highliner         | 2495 | 4   | 9    | 40   | 6   | 30   | 3     | 75    | 10 | 8  | 5 | 3      | 0 |
+| 6000 | 0    | Raptor Class              | 1600 | 2   | 10   | 80   | 6   | 36   | 3     | 78    | 11 | 8  | 4 | 3      | 0 |
+| 6000 | 0    | Vengeance Class           | 2350 | 8   | 3    | 45   | 6   | 36   | 3     | 80    | 13 | 6  | 5 | 3      | 0 |
+| 6000 | 0    | Crimson Defender          | 1900 | 9   | 5    | 65   | 6   | 36   | 3     | 85    | 12 | 7  | 4 | 3      | 3 |
+| 6000 | 0    | Azure Defender            | 1850 | 4   | 9    | 130  | 7   | 36   | 4     | 88    | 12 | 7  | 4 | 3      | 7 |
+| 6000 | 1    | Shizari Huntress          | 2050 | 7   | 8    | 100  | 7   | 36   | 3     | 70    | 14 | 7  | 4 | 3      | 0 |
+| 6000 | 0    | Fallen Carrier            | 1850 | 4   | 7    | 130  | 7   | 36   | 4     | 70    | 8  | 9  | 5 | 3      | 0 |
+| 6000 | 1    | Horizon  Cruiser          | 2250 | 5   | 10   | 60   | 7   | 36   | 4     | 75    | 9  | 9  | 5 | 3      | 0 |
+| 6000 | 0    | Voracious Class           | 1675 | 10  | 8    | 95   | 7   | 36   | 3     | 78    | 12 | 8  | 4 | 3      | 0 |
+| 6000 | 0    | Extremis Carrier          | 2005 | 5   | 8    | 80   | 7   | 36   | 4     | 75    | 7  | 10 | 5 | 3      | 0 |
+| 6000 | 0    | Vark Carrier              | 2500 | 9   | 10   | 90   | 7   | 36   | 5     | 66    | 8  | 10 | 5 | 3      | 9 |
+| 6000 | 1    | Neutiquam Cruiser         | 2050 | 10  | 10   | 150  | 7   | 36   | 2     | 80    | 12 | 9  | 5 | 3      | 6 |
+| 6000 | 0    | Lockwood Defender         | 2005 | 10  | 10   | 55   | 7   | 36   | 3     | 72    | 10 | 8  | 5 | 3      | 3 |
 ||
-| 7000 | 0    | Cautela Heavylift         | 2500 | 5   | 4    | 80   | 6   | 36   | 12 | 8  | 4 | 0     | 0 |
-| 7000 | 0    | Dragoon Cruiser           | 2350 | 6   | 5    | 100  | 6   | 36   | 12 | 8  | 4 | 0     | 0 |
-| 7000 | 0    | Tiberian Highliner        | 2200 | 6   | 5    | 120  | 6   | 42   | 13 | 7  | 6 | 0     | 5 |
-| 7000 | 1    | Degla Megalift            | 1900 | 7   | 9    | 75   | 7   | 36   | 12 | 9  | 5 | 0     | 0 |
-| 7000 | 1    | Azurite Cruiser           | 1850 | 9   | 3    | 130  | 7   | 36   | 11 | 10 | 4 | 0     | 2 |
-| 7000 | 0    | Basalt Carrier            | 1850 | 4   | 7    | 130  | 7   | 36   | 12 | 8  | 6 | 0     | 0 |
-| 7000 | 0    | Vengeance Class Mk3       | 2450 | 8   | 6    | 45   | 7   | 36   | 14 | 6  | 7 | 0     | 0 |
-| 7000 | 0    | Leo Battlecruiser         | 2000 | 8   | 7    | 95   | 7   | 42   | 12 | 9  | 6 | 0     | 4 |
-| 7000 | 1    | Obsidian Carrier          | 2650 | 2   | 10   | 80   | 7   | 42   | 11 | 8  | 6 | 0     | 0 |
-| 7000 | 1    | Larimar Battlecruiser     | 2250 | 4   | 11   | 100  | 7   | 42   | 10 | 10 | 5 | 0     | 2 |
-| 7000 | 0    | Raptor Strikecarrier      | 2250 | 7   | 9    | 115  | 7   | 42   | 10 | 7  | 8 | 0     | 6 |
+| 7000 | 0    | Cautela Heavylift         | 2500 | 5   | 4    | 80   | 6   | 36   | 3     | 70    | 12 | 8  | 4 | 3      | 0 |
+| 7000 | 0    | Dragoon Cruiser           | 2350 | 6   | 5    | 100  | 6   | 36   | 3     | 75    | 12 | 8  | 4 | 3      | 0 |
+| 7000 | 0    | Tiberian Highliner        | 2200 | 6   | 5    | 120  | 6   | 42   | 3     | 78    | 13 | 7  | 6 | 3      | 5 |
+| 7000 | 1    | Degla Megalift            | 1900 | 7   | 9    | 75   | 7   | 36   | 3     | 70    | 12 | 9  | 5 | 3      | 0 |
+| 7000 | 0    | Vengeance Class Mk3       | 2450 | 8   | 6    | 45   | 7   | 36   | 4     | 72    | 14 | 6  | 7 | 3      | 0 |
+| 7000 | 0    | Basalt Carrier            | 1850 | 4   | 7    | 130  | 7   | 36   | 4     | 68    | 12 | 8  | 6 | 3      | 0 |
+| 7000 | 1    | Azurite Cruiser           | 1850 | 9   | 3    | 130  | 7   | 36   | 4     | 74    | 11 | 10 | 4 | 3      | 2 |
+| 7000 | 0    | Raptor Strikecarrier      | 2250 | 7   | 9    | 115  | 7   | 42   | 2     | 90    | 10 | 7  | 8 | 3      | 6 |
+| 7000 | 0    | Leo Battlecruiser         | 2000 | 8   | 7    | 95   | 7   | 42   | 4     | 85    | 12 | 9  | 6 | 3      | 4 |
+| 7000 | 1    | Larimar Battlecruiser     | 2250 | 4   | 11   | 100  | 7   | 42   | 4     | 70    | 10 | 10 | 5 | 3      | 2 |
+| 7000 | 1    | Obsidian Carrier          | 2650 | 2   | 10   | 80   | 7   | 42   | 4     | 70    | 11 | 8  | 6 | 3      | 0 |
 ||
-| 8000 | 0    | Aegis Freighter           | 2200 | 9   | 7    | 50   | 7   | 36   | 8  | 13 | 7 | 0     | 7 |
-| 8000 | 1    | Pallas Freighter          | 2050 | 7   | 11   | 95   | 7   | 36   | 9  | 11 | 8 | 0     | 0 |
-| 8000 | 0    | Tempus Freighter          | 2900 | 6   | 10   | 150  | 7   | 36   | 9  | 11 | 8 | 0     | 1 |
-| 8000 | 0    | Broadsword Class          | 2600 | 5   | 3    | 60   | 7   | 42   | 13 | 9  | 7 | 0     | 0 |
-| 8000 | 0    | Warhammer Class           | 2500 | 3   | 9    | 35   | 7   | 42   | 12 | 11 | 7 | 0     | 0 |
-| 8000 | 0    | Mortifor Carrier          | 2350 | 10  | 6    | 60   | 7   | 42   | 15 | 7  | 7 | 0     | 5 |
-| 8000 | 0    | Harbinger Carrier         | 2100 | 7   | 11   | 95   | 7   | 42   | 12 | 10 | 6 | 0     | 8 |
-| 8000 | 1    | Skylift Carrier           | 1850 | 8   | 10   | 135  | 7   | 42   | 14 | 8  | 6 | 0     | 4 |
+| 8000 | 1    | Pallas Freighter          | 2050 | 7   | 11   | 95   | 7   | 36   | 3     | 60    | 9  | 11 | 8 | 3      | 0 |
+| 8000 | 0    | Aegis Freighter           | 2200 | 9   | 7    | 50   | 7   | 36   | 4     | 60    | 8  | 13 | 7 | 3      | 7 |
+| 8000 | 0    | Tempus Freighter          | 2900 | 6   | 10   | 150  | 7   | 36   | 2     | 57    | 9  | 11 | 8 | 3      | 1 |
+| 8000 | 0    | Broadsword Class          | 2600 | 5   | 3    | 60   | 7   | 42   | 4     | 70    | 13 | 9  | 7 | 3      | 0 |
+| 8000 | 1    | Skylift Carrier           | 1850 | 8   | 10   | 135  | 7   | 42   | 5     | 62    | 14 | 8  | 6 | 3      | 4 |
+| 8000 | 0    | Warhammer Class           | 2500 | 3   | 9    | 35   | 7   | 42   | 4     | 72    | 12 | 11 | 7 | 3      | 0 |
+| 8000 | 0    | Harbinger Carrier         | 2100 | 7   | 11   | 95   | 7   | 42   | 5     | 66    | 12 | 10 | 6 | 3      | 8 |
+| 8000 | 0    | Mortifor Carrier          | 2350 | 10  | 6    | 60   | 7   | 42   | 5     | 64    | 15 | 7  | 7 | 3      | 5 |
 ||
-| 9000 | 0    | Sword Battlecruiser       | 2100 | 9   | 7    | 115  | 7   | 42   | 14 | 12 | 6 | 0     | 0 |
-| 9000 | 0    | Cautela Titan             | 2700 | 7   | 4    | 160  | 7   | 42   | 12 | 13 | 6 | 0     | 0 |
-| 9000 | 0    | Dreadnought Battlecarrier | 2500 | 8   | 8    | 135  | 7   | 42   | 13 | 11 | 8 | 0     | 1 |
-| 9000 | 0    | Acheron Battlecarrier     | 2350 | 5   | 3    | 145  | 7   | 42   | 15 | 8  | 8 | 0     | 0 |
-| 9000 | 0    | Alistar Huntress          | 2550 | 11  | 6    | 160  | 7   | 42   | 16 | 9  | 7 | 0     | 7 |
-| 9000 | 0    | Degla Heavylift           | 2450 | 14  | 4    | 200  | 7   | 42   | 12 | 11 | 7 | 0     | 1 |
+| 9000 | 0    | Acheron Battlecarrier     | 2350 | 5   | 3    | 145  | 7   | 42   | 5     | 78    | 15 | 8  | 8 | 3      | 0 |
+| 9000 | 0    | Cautela Titan             | 2700 | 7   | 4    | 160  | 7   | 42   | 5     | 70    | 12 | 13 | 6 | 3      | 0 |
+| 9000 | 0    | Degla Heavylift           | 2450 | 14  | 4    | 200  | 7   | 42   | 4     | 76    | 12 | 11 | 7 | 3      | 1 |
+| 9000 | 0    | Sword Battlecruiser       | 2100 | 9   | 7    | 115  | 7   | 42   | 5     | 73    | 14 | 12 | 6 | 3      | 0 |
+| 9000 | 0    | Alistar Huntress          | 2550 | 11  | 6    | 160  | 7   | 42   | 6     | 60    | 16 | 9  | 7 | 3      | 7 |
+| 9000 | 0    | Dreadnought Battlecarrier | 2500 | 8   | 8    | 135  | 7   | 42   | 6     | 72    | 13 | 11 | 8 | 3      | 1 |
