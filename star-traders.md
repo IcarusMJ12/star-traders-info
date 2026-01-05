@@ -701,30 +701,32 @@ select componentsize as size, componentname as name, skPilot as pil, skShipOps a
 
 ## Ships
 
-### Starting Ships (priority added manually)
+### Starting Ships
+
+Starting stats added manually from the wiki, thus likely inaccurate.
 
 ```sqlite3
-select shiptypename, unlockid > 0 as lock from shiptype where startingship = 1 order by basemass;
+select shiptypename, unlockid > 0 as l from shiptype where startingship = 1 order by basemass;
 ```
 
-|     shipTypeName     | lock | prio |
-|----------------------|------|------|
-| Juror Class          | 0    | E    |
-| Scout Cutter         | 0    | D    |
-| Reach Vindex         | 1    | D    |
-| Longbolt             | 1    | D    |
-| Paladin Cruiser      | 0    | C    |
-| Frontier Liner       | 0    | C    |
-| Galtak Freighter     | 1    | C    |
-| Aeternum Vindex      | 1    | B    |
-| Palace Interceptor   | 1    | B    |
-| Fidelis Cutter       | 0    | B    |
-| Guardian Interceptor | 0    | B    |
-| Stellar Falcon       | 0    | A    |
-| Cautela Heavylift    | 0    | A    |
-| Dragoon Cruiser      | 0    | A    |
-| Degla Megalift       | 1    | A    |
-| Shizari Huntress     | 1    | A    |
+|     shipTypeName     | l | prio | mass | fuel | hold | arm | shld | spd | agi | au | com | jmp | off | crew | pil | nav | ops | ele | gun |
+|----------------------|---|------|------|------|------|-----|------|-----|-----|----|-----|-----|-----|------|-----|-----|-----|-----|-----|
+| Juror Class          | 0 | E    | 3400 | 95   | 25   | 10  | 10   | 24  | 24  | 3  | 0   | 21  | 4   | 24   | 13  | 17  | 23  | 14  | 15  |
+| Scout Cutter         | 0 | D    | 2400 | 120  | 40   | 12  | 12   | 27  | 27  | 3  | 0   | 18  | 3   | 18   | 16  | 13  | 26  | 12  | 15  |
+| Reach Vindex         | 1 | D    | 2400 | 175  | 25   | 10  | 14   | 27  | 27  | 3  | 0   | 16  | 4   | 24   | 11  | 15  | 22  | 15  | 16  |
+| Longbolt             | 1 | D    | 3400 | 143  | 25   | 8   | 12   | 23  | 23  | 2  | 0   | 11  | 4   | 24   | 12  | 25  | 27  | 26  | 13  |
+| Paladin Cruiser      | 0 | C    | 5000 | 195  | 50   | 8   | 7    | 19  | 19  | 3  | 0   | 24  | 4   | 24   | 14  | 17  | 30  | 18  | 20  |
+| Frontier Liner       | 0 | C    | 5000 | 145  | 65   | 7   | 8    | 19  | 19  | 3  | 0   | 23  | 4   | 24   | 14  | 17  | 24  | 15  | 17  |
+| Galtak Freighter     | 1 | C    | 5000 | 150  | 75   | 8   | 5    | 19  | 29  | 3  | 0   | 23  | 4   | 24   | 14  | 21  | 29  | 16  | 20  |
+| Aeternum Vindex      | 1 | B    | 2400 | 145  | 35   | 14  | 10   | 27  | 27  | 2  | 0   | 16  | 5   | 24   | 10  | 16  | 20  | 17  | 17  |
+| Palace Interceptor   | 1 | B    | 3400 | 110  | 25   | 11  | 11   | 29  | 24  | 3  | 0   | 23  | 5   | 24   | 13  | 19  | 23  | 21  | 17  |
+| Fidelis Cutter       | 0 | B    | 6000 | 140  | 50   | 7   | 8    | 15  | 15  | 4  | 5   | 33  | 5   | 30   | 24  | 29  | 33  | 34  | 17  |
+| Guardian Interceptor | 0 | B    | 6000 | 140  | 50   | 6   | 6    | 15  | 15  | 4  | 5   | 30  | 5   | 30   | 24  | 29  | 38  | 31  | 24  |
+| Stellar Falcon       | 0 | A    | 6000 | 115  | 25   | 5   | 9    | 15  | 15  | 4  | 5   | 32  | 5   | 30   | 24  | 28  | 34  | 34  | 25  |
+| Cautela Heavylift    | 0 | A    | 7000 | 170  | 35   | 5   | 4    | 12  | 12  | 5  | 6   | 37  | 5   | 36   | 20  | 23  | 31  | 27  | 29  |
+| Dragoon Cruiser      | 0 | A    | 7000 | 190  | 35   | 6   | 5    | 12  | 13  | 6  | 8   | 37  | 5   | 36   | 21  | 24  | 35  | 27  | 33  |
+| Degla Megalift       | 1 | A    | 7000 | 215  | 45   | 7   | 9    | 12  | 11  | 4  | 4   | 38  | 6   | 36   | 21  | 25  | 37  | 30  | 24  |
+| Shizari Huntress     | 1 | A    | 6000 | 200  | 25   | 7   | 8    | 19  | 13  | 4  | 4   | 52  | 7   | 36   | 26  | 33  | 41  | 35  | 18  |
 
 
 ### All Ships (notables in bold)
@@ -775,7 +777,7 @@ from shiptype where startingship > 0 order by mass, off, crew, shipcost;
 | 5000 | 0    | Royale Gladius            | 1100 | 10  | 10   | 55   | 5   | 30   | 2     | 88    | 12 | 5  | 4 | 2      | 4 |
 **| 5000 | 0    | Vrax Hauler               | 1000 | 12  | 9    | 100  | 5   | 30   | 2     | 75    | 10 | 7  | 4 | 2      | 0 |**
 | 5000 | 0    | Longbow Cruiser           | 1500 | 9   | 8    | 25   | 5   | 30   | 2     | 85    | 11 | 6  | 4 | 2      | 0 |
-| 5000 | 0    | Galtak Heavylift          | 1500 | 7   | 7    | 50   | 5   | 30   | 2     | 78    | 11 | 5  | 5 | 2      | 0 |
+*| 5000 | 0    | Galtak Heavylift          | 1500 | 7   | 7    | 50   | 5   | 30   | 2     | 78    | 11 | 5  | 5 | 2      | 0 |*
 | 5000 | 0    | Strikecarrier             | 1350 | 8   | 12   | 60   | 5   | 30   | 3     | 82    | 12 | 5  | 4 | 2      | 0 |
 | 5000 | 0    | Reach Cruiser             | 1650 | 12  | 8    | 75   | 5   | 30   | 2     | 88    | 11 | 6  | 4 | 2      | 8 |
 | 5000 | 0    | Arcanum Freighter         | 1600 | 9   | 8    | 50   | 5   | 30   | 2     | 85    | 12 | 5  | 4 | 2      | 9 |
