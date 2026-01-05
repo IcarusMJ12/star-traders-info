@@ -183,7 +183,7 @@ select componentname as name, factionid as faction from shipcomponent where fact
 
 Scout bridges (size 1) carry 3 officers, others only 1.
 
-Capital carrier bridge also offers 25 storage and fuel.
+Capital Carrier bridge gives 15 defense and 12 move to craft, while Capital Freighter bridge offers 25 storage and fuel.
 
 Other effects:
 
